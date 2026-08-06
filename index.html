@@ -1274,7 +1274,22 @@
               </h2>
             </div>
 
-            <form id="contact-form" class="space-y-5">
+            <form
+              id="contact-form"
+              class="space-y-5"
+              method="POST"
+              action="https://formsubmit.co/tiffanynig.ltd@gmail.com"
+            >
+              <!-- FormSubmit routes this inquiry to tiffanynig.ltd@gmail.com -->
+              <input
+                type="hidden"
+                name="_subject"
+                value="New inquiry - Tiffany Exquisite Interiors website"
+              />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+
               <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                   <label
@@ -1284,6 +1299,7 @@
                   <input
                     type="text"
                     id="name"
+                    name="name"
                     required
                     class="form-input w-full rounded-2xl px-5 py-3.5 text-sm placeholder-[#a39b90]"
                     placeholder="Sophia Rex"
@@ -1297,6 +1313,7 @@
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     required
                     class="form-input w-full rounded-2xl px-5 py-3.5 text-sm placeholder-[#a39b90]"
                     placeholder="you@domain.com"
@@ -1313,8 +1330,9 @@
                   <input
                     type="tel"
                     id="phone"
+                    name="phone"
                     class="form-input w-full rounded-2xl px-5 py-3.5 text-sm placeholder-[#a39b90]"
-                    placeholder="+234 803 555 0192"
+                    placeholder="+2347010658918"
                   />
                 </div>
                 <div>
@@ -1324,6 +1342,7 @@
                   >
                   <select
                     id="project-type"
+                    name="project_type"
                     class="form-input w-full rounded-2xl px-5 py-[15px] text-sm text-[#2a2622]"
                   >
                     <option value="">Select a service</option>
@@ -1345,6 +1364,7 @@
                 >
                 <textarea
                   id="message"
+                  name="message"
                   rows="4"
                   required
                   class="form-input w-full rounded-3xl px-5 py-4 text-sm resize-y min-h-[118px] placeholder-[#a39b90]"
@@ -1355,14 +1375,24 @@
               <div class="pt-2">
                 <button
                   type="submit"
+                  id="contact-submit-btn"
                   class="premium-btn premium-btn-gold w-full md:w-auto px-12 py-4 text-sm font-medium tracking-[1.75px] rounded-full flex items-center justify-center gap-x-2"
                 >
                   SEND INQUIRY
                   <i class="fa-solid fa-paper-plane"></i>
                 </button>
                 <p class="text-xs text-[#7a736a] mt-4">
-                  We typically respond within 48 hours.
+                  Inquiries are sent to
+                  <a
+                    href="mailto:tiffanynig.ltd@gmail.com"
+                    class="text-[#b8956c] hover:underline"
+                    >tiffanynig.ltd@gmail.com</a
+                  >. We typically respond within 48 hours.
                 </p>
+                <p
+                  id="contact-form-error"
+                  class="hidden text-xs text-red-600 mt-3"
+                ></p>
               </div>
             </form>
           </div>
@@ -1473,6 +1503,77 @@
       </div>
     </section>
 
+    <!-- PRIVACY -->
+    <section
+      id="privacy"
+      class="section-padding border-t border-[#e8e0d4] max-w-3xl mx-auto px-6 lg:px-8"
+    >
+      <div class="uppercase text-xs tracking-[3.5px] text-[#b8956c] mb-3">
+        Policies
+      </div>
+      <h2 class="heading-serif text-4xl font-medium tracking-tighter mb-6">
+        Privacy
+      </h2>
+      <div class="space-y-4 text-sm text-[#5c564e] leading-relaxed">
+        <p>
+          Tiffany Exquisite Interiors respects your privacy. Information you
+          share through this website (name, email, phone, and project notes) is
+          used only to respond to your inquiry and to deliver design services you
+          request.
+        </p>
+        <p>
+          We do not sell your personal data. Messages are handled by our studio
+          team at
+          <a
+            href="mailto:tiffanynig.ltd@gmail.com"
+            class="text-[#b8956c] hover:underline"
+            >tiffanynig.ltd@gmail.com</a
+          >. You may email us at any time to update or delete information you
+          previously provided.
+        </p>
+        <p>
+          This site may use basic analytics or hosting logs to keep the service
+          secure and reliable. By contacting us, you agree to this use of your
+          details for communication related to your project.
+        </p>
+      </div>
+    </section>
+
+    <!-- LEGAL -->
+    <section
+      id="legal"
+      class="section-padding border-t border-[#e8e0d4] max-w-3xl mx-auto px-6 lg:px-8 pt-0"
+    >
+      <div class="uppercase text-xs tracking-[3.5px] text-[#b8956c] mb-3">
+        Policies
+      </div>
+      <h2 class="heading-serif text-4xl font-medium tracking-tighter mb-6">
+        Legal
+      </h2>
+      <div class="space-y-4 text-sm text-[#5c564e] leading-relaxed">
+        <p>
+          All content on this website (text, images, videos, branding, and
+          layout) is the property of Tiffany Exquisite Interiors unless otherwise
+          credited. You may not copy or reuse materials for commercial purposes
+          without written permission.
+        </p>
+        <p>
+          Project photos and films illustrate our work and style. Final outcomes
+          always depend on site conditions, budget, materials, and client
+          choices. Nothing on this site is a binding quote until confirmed in a
+          written agreement.
+        </p>
+        <p>
+          For contracts, invoices, or formal notices, contact
+          <a
+            href="mailto:tiffanynig.ltd@gmail.com"
+            class="text-[#b8956c] hover:underline"
+            >tiffanynig.ltd@gmail.com</a
+          >.
+        </p>
+      </div>
+    </section>
+
     <!-- FOOTER -->
     <footer class="border-t border-[#e8e0d4] py-9 text-center md:text-left">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -1483,10 +1584,14 @@
           <div
             class="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-1"
           >
-            <a href="#" class="hover:text-[#5c564e]">Privacy</a>
-            <a href="#" class="hover:text-[#5c564e]">Legal</a>
-            <a href="#" class="hover:text-[#5c564e]">Studio Visits</a>
-            <a href="#" class="hover:text-[#5c564e]">Press</a>
+            <a href="#privacy" class="hover:text-[#5c564e]">Privacy</a>
+            <a href="#legal" class="hover:text-[#5c564e]">Legal</a>
+            <a href="#contact" class="hover:text-[#5c564e]">Studio Visits</a>
+            <a
+              href="mailto:tiffanynig.ltd@gmail.com?subject=Press%20inquiry%20-%20Tiffany%20Exquisite%20Interiors"
+              class="hover:text-[#5c564e]"
+              >Press</a
+            >
           </div>
           <div class="text-[10px]">
             Crafted with intention in Abuja, Nigeria
@@ -1637,25 +1742,57 @@
         updateActiveNav();
       }
 
-      // Contact form handling with success modal
+      // Contact form → email tiffanynig.ltd@gmail.com via FormSubmit
       function setupContactForm() {
         const form = document.getElementById("contact-form");
         const modal = document.getElementById("success-modal");
+        const errorEl = document.getElementById("contact-form-error");
+        const btn = document.getElementById("contact-submit-btn");
 
-        form.addEventListener("submit", function (e) {
+        form.addEventListener("submit", async function (e) {
           e.preventDefault();
+          if (errorEl) {
+            errorEl.classList.add("hidden");
+            errorEl.textContent = "";
+          }
 
-          // Simple client-side validation already handled by 'required'
+          const originalHtml = btn ? btn.innerHTML : "";
+          if (btn) {
+            btn.disabled = true;
+            btn.innerHTML =
+              'SENDING... <i class="fa-solid fa-spinner fa-spin"></i>';
+          }
 
-          // Simulate sending (in a real site this would POST to a backend)
-          setTimeout(() => {
+          try {
+            const data = new FormData(form);
+            const res = await fetch(
+              "https://formsubmit.co/ajax/tiffanynig.ltd@gmail.com",
+              {
+                method: "POST",
+                body: data,
+                headers: { Accept: "application/json" },
+              }
+            );
+
+            if (!res.ok) {
+              throw new Error("Send failed");
+            }
+
             form.reset();
             modal.classList.remove("hidden");
             modal.classList.add("flex");
-
-            // Optional: Scroll to top of modal
-            modal.scrollIntoView({ behavior: "smooth", block: "center" });
-          }, 650);
+          } catch (err) {
+            if (errorEl) {
+              errorEl.textContent =
+                "Could not send right now. Please email tiffanynig.ltd@gmail.com directly, or try again.";
+              errorEl.classList.remove("hidden");
+            }
+          } finally {
+            if (btn) {
+              btn.disabled = false;
+              btn.innerHTML = originalHtml;
+            }
+          }
         });
       }
 
