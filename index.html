@@ -13,11 +13,15 @@
       @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&amp;family=Inter:wght@300;400;500&amp;display=swap");
 
       :root {
-        --charcoal: #121212;
-        --deep: #0f0e0c;
-        --gold: #c5a46e;
-        --beige: #d4c3aa;
-        --cream: #f8f4ef;
+        --ink: #2a2622;
+        --ink-soft: #5c564e;
+        --muted: #8a8278;
+        --gold: #b8956c;
+        --gold-soft: #d4c3aa;
+        --cream: #faf7f2;
+        --sand: #f3efe8;
+        --white: #ffffff;
+        --border: #e8e0d4;
         --sage: #8a987f;
       }
 
@@ -31,8 +35,8 @@
         letter-spacing: -0.025em;
       }
 
-      .luxury-bg {
-        background-color: #0f0e0c;
+      .light-bg {
+        background-color: #faf7f2;
       }
 
       .section-padding {
@@ -52,7 +56,7 @@
         height: 1px;
         bottom: -2px;
         left: 0;
-        background-color: #c5a46e;
+        background-color: #b8956c;
         transition: width 0.3s ease;
       }
 
@@ -61,7 +65,7 @@
       }
 
       .gold-accent {
-        color: #c5a46e;
+        color: #b8956c;
       }
 
       .elegant-card {
@@ -75,12 +79,14 @@
 
       .service-card {
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        border: 1px solid #3a3a3a;
+        border: 1px solid #e8e0d4;
+        background-color: #ffffff;
       }
 
       .service-card:hover {
-        border-color: #c5a46e;
-        background-color: #181716;
+        border-color: #b8956c;
+        background-color: #ffffff;
+        box-shadow: 0 18px 40px -18px rgba(42, 38, 34, 0.18);
         transform: translateY(-4px);
       }
 
@@ -101,9 +107,9 @@
       .portfolio-overlay {
         background: linear-gradient(
           to top,
-          rgba(15, 14, 12, 0.92) 0%,
-          rgba(15, 14, 12, 0.6) 40%,
-          transparent 70%
+          rgba(42, 38, 34, 0.88) 0%,
+          rgba(42, 38, 34, 0.45) 45%,
+          transparent 72%
         );
         opacity: 0;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -138,7 +144,7 @@
       }
 
       .nav-active {
-        color: #c5a46e !important;
+        color: #b8956c !important;
       }
 
       .stat-number {
@@ -146,14 +152,15 @@
       }
 
       .form-input {
-        background-color: #181716;
-        border: 1px solid #3a3a3a;
+        background-color: #ffffff;
+        border: 1px solid #e8e0d4;
+        color: #2a2622;
         transition: all 0.2s ease;
       }
 
       .form-input:focus {
-        border-color: #c5a46e;
-        box-shadow: 0 0 0 3px rgba(197, 164, 110, 0.1);
+        border-color: #b8956c;
+        box-shadow: 0 0 0 3px rgba(184, 149, 108, 0.15);
         outline: none;
       }
 
@@ -164,24 +171,56 @@
       }
 
       .premium-btn-gold {
-        background-color: #c5a46e;
-        color: #0f0e0c;
+        background-color: #b8956c;
+        color: #ffffff;
       }
 
       .premium-btn-gold:hover {
-        background-color: #d4b99f;
+        background-color: #a6845a;
         transform: translateY(-1px);
       }
 
       .premium-btn-outline {
-        border: 1px solid #d4c3aa;
-        color: #d4c3aa;
+        border: 1px solid #b8956c;
+        color: #5c564e;
+        background: rgba(255, 255, 255, 0.75);
       }
 
       .premium-btn-outline:hover {
-        background-color: #d4c3aa;
-        color: #0f0e0c;
-        border-color: #d4c3aa;
+        background-color: #b8956c;
+        color: #ffffff;
+        border-color: #b8956c;
+      }
+
+      .video-frame {
+        border-radius: 1.5rem;
+        overflow: hidden;
+        border: 1px solid #e8e0d4;
+        background: #2a2622;
+        box-shadow: 0 20px 45px -25px rgba(42, 38, 34, 0.35);
+      }
+
+      .video-frame video {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        background: #1a1816;
+      }
+
+      .shop-card {
+        border: 1px solid #e8e0d4;
+        background: #ffffff;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .shop-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 22px 44px -22px rgba(42, 38, 34, 0.2);
+        border-color: #b8956c;
       }
 
       .quote-mark {
@@ -214,7 +253,7 @@
         background: linear-gradient(
           to right,
           transparent,
-          #c5a46e,
+          #b8956c,
           transparent
         );
       }
@@ -232,7 +271,7 @@
         background: linear-gradient(
           to right,
           transparent,
-          #3a3a3a,
+          #e8e0d4,
           transparent
         );
       }
@@ -242,10 +281,10 @@
       }
     </style>
   </head>
-  <body class="luxury-bg text-[#f8f4ef] smooth-scroll overflow-x-hidden">
+  <body class="light-bg text-[#2a2622] smooth-scroll overflow-x-hidden">
     <!-- NAVBAR -->
     <nav
-      class="fixed top-0 left-0 right-0 z-50 bg-[#0f0e0c]/95 backdrop-blur-lg border-b border-[#3a3a3a]"
+      class="fixed top-0 left-0 right-0 z-50 bg-[#faf7f2]/95 backdrop-blur-lg border-b border-[#e8e0d4]"
     >
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
@@ -253,9 +292,9 @@
           <div class="flex items-center">
             <div class="flex items-center gap-x-3">
               <div
-                class="w-9 h-9 rounded-full border border-[#c5a46e] flex items-center justify-center"
+                class="w-9 h-9 rounded-full border border-[#b8956c] flex items-center justify-center"
               >
-                <span class="text-[#c5a46e] text-xl font-light tracking-[-2px]"
+                <span class="text-[#b8956c] text-xl font-light tracking-[-2px]"
                   >TE</span
                 >
               </div>
@@ -278,27 +317,37 @@
           >
             <a
               href="#about"
-              class="nav-link text-[#d4c3aa] hover:text-white text-sm"
+              class="nav-link text-[#5c564e] hover:text-[#2a2622] text-sm"
               >About</a
             >
             <a
               href="#services"
-              class="nav-link text-[#d4c3aa] hover:text-white text-sm"
+              class="nav-link text-[#5c564e] hover:text-[#2a2622] text-sm"
               >Services</a
             >
             <a
               href="#work"
-              class="nav-link text-[#d4c3aa] hover:text-white text-sm"
+              class="nav-link text-[#5c564e] hover:text-[#2a2622] text-sm"
               >Work</a
             >
             <a
+              href="#videos"
+              class="nav-link text-[#5c564e] hover:text-[#2a2622] text-sm"
+              >Videos</a
+            >
+            <a
+              href="#shop"
+              class="nav-link text-[#5c564e] hover:text-[#2a2622] text-sm"
+              >Shop</a
+            >
+            <a
               href="#testimonials"
-              class="nav-link text-[#d4c3aa] hover:text-white text-sm"
+              class="nav-link text-[#5c564e] hover:text-[#2a2622] text-sm"
               >Journal</a
             >
             <a
               href="#contact"
-              class="nav-link text-[#d4c3aa] hover:text-white text-sm"
+              class="nav-link text-[#5c564e] hover:text-[#2a2622] text-sm"
               >Contact</a
             >
           </div>
@@ -307,7 +356,7 @@
           <div class="hidden md:block">
             <a
               href="#contact"
-              class="premium-btn px-8 py-2.5 text-xs font-medium tracking-[1.5px] border border-[#c5a46e] text-[#c5a46e] hover:bg-[#c5a46e] hover:text-[#0f0e0c] rounded-full inline-flex items-center justify-center"
+              class="premium-btn px-8 py-2.5 text-xs font-medium tracking-[1.5px] border border-[#b8956c] text-[#b8956c] hover:bg-[#b8956c] hover:text-white rounded-full inline-flex items-center justify-center"
             >
               BOOK CONSULTATION
             </a>
@@ -316,7 +365,7 @@
           <!-- Mobile Menu Button -->
           <button
             id="mobile-menu-btn"
-            class="md:hidden w-10 h-10 flex items-center justify-center text-[#d4c3aa] hover:text-white"
+            class="md:hidden w-10 h-10 flex items-center justify-center text-[#5c564e] hover:text-[#2a2622]"
           >
             <i class="fa-solid fa-bars text-xl"></i>
           </button>
@@ -326,37 +375,47 @@
       <!-- Mobile Menu -->
       <div
         id="mobile-menu"
-        class="hidden md:hidden border-t border-[#3a3a3a] bg-[#0f0e0c]"
+        class="hidden md:hidden border-t border-[#e8e0d4] bg-[#faf7f2]"
       >
         <div class="px-6 py-8 flex flex-col gap-y-5 text-sm tracking-wider">
           <a
             href="#about"
-            class="mobile-nav-link text-[#d4c3aa] hover:text-white py-1"
+            class="mobile-nav-link text-[#5c564e] hover:text-[#2a2622] py-1"
             >About</a
           >
           <a
             href="#services"
-            class="mobile-nav-link text-[#d4c3aa] hover:text-white py-1"
+            class="mobile-nav-link text-[#5c564e] hover:text-[#2a2622] py-1"
             >Services</a
           >
           <a
             href="#work"
-            class="mobile-nav-link text-[#d4c3aa] hover:text-white py-1"
+            class="mobile-nav-link text-[#5c564e] hover:text-[#2a2622] py-1"
             >Work</a
           >
           <a
+            href="#videos"
+            class="mobile-nav-link text-[#5c564e] hover:text-[#2a2622] py-1"
+            >Videos</a
+          >
+          <a
+            href="#shop"
+            class="mobile-nav-link text-[#5c564e] hover:text-[#2a2622] py-1"
+            >Shop</a
+          >
+          <a
             href="#testimonials"
-            class="mobile-nav-link text-[#d4c3aa] hover:text-white py-1"
+            class="mobile-nav-link text-[#5c564e] hover:text-[#2a2622] py-1"
             >Journal</a
           >
           <a
             href="#contact"
-            class="mobile-nav-link text-[#d4c3aa] hover:text-white py-1"
+            class="mobile-nav-link text-[#5c564e] hover:text-[#2a2622] py-1"
             >Contact</a
           >
           <a
             href="#contact"
-            class="mt-3 premium-btn w-full text-center py-3 text-xs font-medium tracking-[1.5px] border border-[#c5a46e] text-[#c5a46e] hover:bg-[#c5a46e] hover:text-[#0f0e0c] rounded-full"
+            class="mt-3 premium-btn w-full text-center py-3 text-xs font-medium tracking-[1.5px] border border-[#b8956c] text-[#b8956c] hover:bg-[#b8956c] hover:text-white rounded-full"
           >
             BOOK CONSULTATION
           </a>
@@ -375,28 +434,28 @@
       >
         <!-- Sophisticated overlay -->
         <div
-          class="absolute inset-0 bg-gradient-to-b from-[#0f0e0c]/70 via-[#0f0e0c]/60 to-[#0f0e0c]/80"
+          class="absolute inset-0 bg-gradient-to-b from-[#2a2622]/50 via-[#2a2622]/40 to-[#2a2622]/60"
         ></div>
         <div
-          class="absolute inset-0 bg-gradient-to-r from-[#0f0e0c]/50 via-transparent to-[#0f0e0c]/30"
+          class="absolute inset-0 bg-gradient-to-r from-[#2a2622]/35 via-transparent to-[#2a2622]/25"
         ></div>
       </div>
 
       <div class="relative z-10 max-w-5xl px-6 text-center">
         <div
-          class="inline-block mb-4 px-4 py-1.5 rounded-full border border-[#c5a46e]/40 text-xs tracking-[3px] text-[#d4c3aa]"
+          class="inline-block mb-4 px-4 py-1.5 rounded-full border border-white/40 bg-white/15 backdrop-blur text-xs tracking-[3px] text-white"
         >
           EST. 2023 • ABUJA, NIGERIA
         </div>
 
         <h1
-          class="heading-serif text-6xl md:text-7xl lg:text-8xl font-medium tracking-tighter leading-[0.92] mb-5"
+          class="heading-serif text-6xl md:text-7xl lg:text-8xl font-medium tracking-tighter leading-[0.92] mb-5 text-white drop-shadow-sm"
         >
           Tiffany Exquisite<br />Interiors
         </h1>
 
         <p
-          class="max-w-lg mx-auto text-xl md:text-2xl text-[#d4c3aa] font-light tracking-tight mb-10"
+          class="max-w-lg mx-auto text-xl md:text-2xl text-[#f3efe8] font-light tracking-tight mb-10"
         >
           Timeless spaces.<br />
           Thoughtful living.
@@ -425,11 +484,11 @@
         <div class="mt-16 flex justify-center">
           <a href="#about" class="flex flex-col items-center group">
             <span
-              class="text-xs tracking-[2px] text-[#d4c3aa] mb-2 group-hover:text-[#c5a46e]"
+              class="text-xs tracking-[2px] text-[#f3efe8] mb-2 group-hover:text-[#b8956c]"
               >SCROLL TO BEGIN</span
             >
             <i
-              class="fa-solid fa-chevron-down text-[#c5a46e] text-lg animate-bounce"
+              class="fa-solid fa-chevron-down text-[#b8956c] text-lg animate-bounce"
             ></i>
           </a>
         </div>
@@ -441,7 +500,7 @@
       <div class="grid md:grid-cols-12 gap-x-16 gap-y-12 items-start">
         <!-- Left column -->
         <div class="md:col-span-7">
-          <div class="uppercase text-xs tracking-[3.5px] text-[#c5a46e] mb-3">
+          <div class="uppercase text-xs tracking-[3.5px] text-[#b8956c] mb-3">
             Our Story
           </div>
           <h2
@@ -450,7 +509,7 @@
             A quiet devotion to<br />beautiful living.
           </h2>
 
-          <div class="prose prose-lg text-[#d4c3aa] max-w-[52ch]">
+          <div class="prose prose-lg text-[#5c564e] max-w-[52ch]">
             <p class="text-[15.5px] leading-relaxed mb-6">
               For more than fifteen years, Tiffany Exquisite Interiors has
               created homes of enduring beauty for clients who value refinement,
@@ -468,62 +527,62 @@
 
         <!-- Right column - Values -->
         <div class="md:col-span-5 mt-2">
-          <div class="uppercase text-xs tracking-[3px] text-[#c5a46e] mb-5">
+          <div class="uppercase text-xs tracking-[3px] text-[#b8956c] mb-5">
             Our Values
           </div>
 
           <div class="space-y-7">
             <div class="value-item flex gap-x-4">
-              <div class="mt-1 text-[#c5a46e]">
+              <div class="mt-1 text-[#b8956c]">
                 <i class="fa-solid fa-infinity w-5"></i>
               </div>
               <div>
                 <div class="font-medium text-lg tracking-tight">
                   Timeless Craftsmanship
                 </div>
-                <div class="text-[#a69f92] text-sm mt-0.5 leading-snug">
+                <div class="text-[#7a736a] text-sm mt-0.5 leading-snug">
                   Every detail is considered for longevity, not trend.
                 </div>
               </div>
             </div>
 
             <div class="value-item flex gap-x-4">
-              <div class="mt-1 text-[#c5a46e]">
+              <div class="mt-1 text-[#b8956c]">
                 <i class="fa-solid fa-gem w-5"></i>
               </div>
               <div>
                 <div class="font-medium text-lg tracking-tight">
                   Quiet Luxury
                 </div>
-                <div class="text-[#a69f92] text-sm mt-0.5 leading-snug">
+                <div class="text-[#7a736a] text-sm mt-0.5 leading-snug">
                   Subtle sophistication over statement excess.
                 </div>
               </div>
             </div>
 
             <div class="value-item flex gap-x-4">
-              <div class="mt-1 text-[#c5a46e]">
+              <div class="mt-1 text-[#b8956c]">
                 <i class="fa-solid fa-handshake w-5"></i>
               </div>
               <div>
                 <div class="font-medium text-lg tracking-tight">
                   True Partnership
                 </div>
-                <div class="text-[#a69f92] text-sm mt-0.5 leading-snug">
+                <div class="text-[#7a736a] text-sm mt-0.5 leading-snug">
                   We co-create with our clients, never impose.
                 </div>
               </div>
             </div>
 
             <div class="value-item flex gap-x-4">
-              <div class="mt-1 text-[#c5a46e]">
+              <div class="mt-1 text-[#b8956c]">
                 <i class="fa-solid fa-leaf w-5"></i>
               </div>
               <div>
                 <div class="font-medium text-lg tracking-tight">
                   Conscious Design
                 </div>
-                <div class="text-[#a69f92] text-sm mt-0.5 leading-snug">
+                <div class="text-[#7a736a] text-sm mt-0.5 leading-snug">
                   Sustainable materials and responsible practices.
                 </div>
               </div>
@@ -536,33 +595,33 @@
     <!-- SERVICES -->
     <section
       id="services"
-      class="section-padding bg-[#181716] border-y border-[#3a3a3a]"
+      class="section-padding bg-[#f3efe8] border-y border-[#e8e0d4]"
     >
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="text-center mb-14">
-          <div class="uppercase text-xs tracking-[4px] text-[#c5a46e] mb-3">
+          <div class="uppercase text-xs tracking-[4px] text-[#b8956c] mb-3">
             What We Offer
           </div>
           <h2 class="heading-serif text-5xl font-medium tracking-tighter">
             Curated Services
           </h2>
-          <p class="text-[#d4c3aa] mt-3 max-w-md mx-auto">
+          <p class="text-[#5c564e] mt-3 max-w-md mx-auto">
             Thoughtfully designed experiences from concept through completion.
           </p>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           <!-- Service 1 -->
-          <div class="service-card bg-[#121212] p-8 rounded-3xl group">
+          <div class="service-card bg-white p-8 rounded-3xl group">
             <div
-              class="w-11 h-11 flex items-center justify-center rounded-2xl bg-[#c5a46e]/10 text-[#c5a46e] mb-7"
+              class="w-11 h-11 flex items-center justify-center rounded-2xl bg-[#b8956c]/10 text-[#b8956c] mb-7"
             >
               <i class="fa-solid fa-home text-3xl"></i>
             </div>
             <h3 class="text-2xl font-medium tracking-tight mb-3">
               Residential Design
             </h3>
-            <p class="text-[#a69f92] leading-relaxed">
+            <p class="text-[#7a736a] leading-relaxed">
               Complete bespoke interiors for private homes, from historic
               estates to contemporary residences. Every room is a considered
               composition of comfort and beauty.
@@ -570,16 +629,16 @@
           </div>
 
           <!-- Service 2 -->
-          <div class="service-card bg-[#121212] p-8 rounded-3xl group">
+          <div class="service-card bg-white p-8 rounded-3xl group">
             <div
-              class="w-11 h-11 flex items-center justify-center rounded-2xl bg-[#c5a46e]/10 text-[#c5a46e] mb-7"
+              class="w-11 h-11 flex items-center justify-center rounded-2xl bg-[#b8956c]/10 text-[#b8956c] mb-7"
             >
               <i class="fa-solid fa-building text-3xl"></i>
             </div>
             <h3 class="text-2xl font-medium tracking-tight mb-3">
               Commercial Spaces
             </h3>
-            <p class="text-[#a69f92] leading-relaxed">
+            <p class="text-[#7a736a] leading-relaxed">
               Distinctive workspaces, hospitality, and retail environments that
               express brand identity while creating memorable experiences for
               guests and clients.
@@ -587,16 +646,16 @@
           </div>
 
           <!-- Service 3 -->
-          <div class="service-card bg-[#121212] p-8 rounded-3xl group">
+          <div class="service-card bg-white p-8 rounded-3xl group">
             <div
-              class="w-11 h-11 flex items-center justify-center rounded-2xl bg-[#c5a46e]/10 text-[#c5a46e] mb-7"
+              class="w-11 h-11 flex items-center justify-center rounded-2xl bg-[#b8956c]/10 text-[#b8956c] mb-7"
             >
               <i class="fa-solid fa-bath text-3xl"></i>
             </div>
             <h3 class="text-2xl font-medium tracking-tight mb-3">
               Kitchen &amp; Bath
             </h3>
-            <p class="text-[#a69f92] leading-relaxed">
+            <p class="text-[#7a736a] leading-relaxed">
               Meticulous design of the most personal and frequently used spaces.
               We blend performance with extraordinary materials and serene
               aesthetics.
@@ -604,16 +663,16 @@
           </div>
 
           <!-- Service 4 -->
-          <div class="service-card bg-[#121212] p-8 rounded-3xl group">
+          <div class="service-card bg-white p-8 rounded-3xl group">
             <div
-              class="w-11 h-11 flex items-center justify-center rounded-2xl bg-[#c5a46e]/10 text-[#c5a46e] mb-7"
+              class="w-11 h-11 flex items-center justify-center rounded-2xl bg-[#b8956c]/10 text-[#b8956c] mb-7"
             >
               <i class="fa-solid fa-chair text-3xl"></i>
             </div>
             <h3 class="text-2xl font-medium tracking-tight mb-3">
               Furniture Selection
             </h3>
-            <p class="text-[#a69f92] leading-relaxed">
+            <p class="text-[#7a736a] leading-relaxed">
               Curated collections of custom, vintage, and contemporary
               furniture. We source exceptional pieces that bring soul and
               character into every interior.
@@ -621,16 +680,16 @@
           </div>
 
           <!-- Service 5 -->
-          <div class="service-card bg-[#121212] p-8 rounded-3xl group">
+          <div class="service-card bg-white p-8 rounded-3xl group">
             <div
-              class="w-11 h-11 flex items-center justify-center rounded-2xl bg-[#c5a46e]/10 text-[#c5a46e] mb-7"
+              class="w-11 h-11 flex items-center justify-center rounded-2xl bg-[#b8956c]/10 text-[#b8956c] mb-7"
             >
               <i class="fa-solid fa-tasks text-3xl"></i>
             </div>
             <h3 class="text-2xl font-medium tracking-tight mb-3">
               Project Management
             </h3>
-            <p class="text-[#a69f92] leading-relaxed">
+            <p class="text-[#7a736a] leading-relaxed">
               Seamless execution from initial concept to final installation. Our
               team manages every detail so you can enjoy a stress-free process
               and exquisite results.
@@ -638,16 +697,16 @@
           </div>
 
           <!-- Service 6 -->
-          <div class="service-card bg-[#121212] p-8 rounded-3xl group">
+          <div class="service-card bg-white p-8 rounded-3xl group">
             <div
-              class="w-11 h-11 flex items-center justify-center rounded-2xl bg-[#c5a46e]/10 text-[#c5a46e] mb-7"
+              class="w-11 h-11 flex items-center justify-center rounded-2xl bg-[#b8956c]/10 text-[#b8956c] mb-7"
             >
               <i class="fa-solid fa-leaf text-3xl"></i>
             </div>
             <h3 class="text-2xl font-medium tracking-tight mb-3">
               Sustainable Design
             </h3>
-            <p class="text-[#a69f92] leading-relaxed">
+            <p class="text-[#7a736a] leading-relaxed">
               Thoughtful, responsible design using certified sustainable
               materials, reclaimed elements, and low-impact practices without
               ever compromising elegance.
@@ -661,7 +720,7 @@
     <section id="work" class="section-padding max-w-7xl mx-auto px-6 lg:px-8">
       <div class="flex items-end justify-between mb-10">
         <div>
-          <div class="uppercase text-xs tracking-[4px] text-[#c5a46e] mb-2">
+          <div class="uppercase text-xs tracking-[4px] text-[#b8956c] mb-2">
             Selected Work
           </div>
           <h2
@@ -672,7 +731,7 @@
         </div>
         <a
           href="#contact"
-          class="hidden md:flex items-center text-sm text-[#c5a46e] hover:text-[#d4c3aa] group"
+          class="hidden md:flex items-center text-sm text-[#b8956c] hover:text-[#5c564e] group"
         >
           SEE THE FULL PORTFOLIO
           <i
@@ -685,7 +744,7 @@
       <div class="masonry-grid">
         <!-- Project 1 -->
         <div
-          class="masonry-item portfolio-card rounded-3xl overflow-hidden border border-[#3a3a3a] group"
+          class="masonry-item portfolio-card rounded-3xl overflow-hidden border border-[#e8e0d4] group"
         >
           <div class="relative">
             <img
@@ -696,17 +755,17 @@
             <div class="portfolio-overlay absolute inset-0 flex items-end p-7">
               <div>
                 <div
-                  class="text-[#f8f4ef] font-medium text-[21px] tracking-[-0.3px]"
+                  class="text-[#faf7f2] font-medium text-[21px] tracking-[-0.3px]"
                 >
                   The Maitama Residence
                 </div>
-                <div class="text-[#c5a46e] text-sm tracking-wider">
+                <div class="text-[#b8956c] text-sm tracking-wider">
                   ABUJA, NIGERIA
                 </div>
               </div>
             </div>
             <div
-              class="absolute top-6 right-6 bg-black/40 backdrop-blur px-3 py-1 text-[10px] tracking-widest rounded-full"
+              class="absolute top-6 right-6 bg-[#2a2622]/45 backdrop-blur px-3 py-1 text-[10px] tracking-widest rounded-full"
             >
               RESIDENTIAL
             </div>
@@ -715,7 +774,7 @@
 
         <!-- Project 2 -->
         <div
-          class="masonry-item portfolio-card rounded-3xl overflow-hidden border border-[#3a3a3a] group"
+          class="masonry-item portfolio-card rounded-3xl overflow-hidden border border-[#e8e0d4] group"
         >
           <div class="relative">
             <img
@@ -726,17 +785,17 @@
             <div class="portfolio-overlay absolute inset-0 flex items-end p-7">
               <div>
                 <div
-                  class="text-[#f8f4ef] font-medium text-[21px] tracking-[-0.3px]"
+                  class="text-[#faf7f2] font-medium text-[21px] tracking-[-0.3px]"
                 >
                   The Ikoyi Waterfront Villa
                 </div>
-                <div class="text-[#c5a46e] text-sm tracking-wider">
+                <div class="text-[#b8956c] text-sm tracking-wider">
                   LAGOS, NIGERIA
                 </div>
               </div>
             </div>
             <div
-              class="absolute top-6 right-6 bg-black/40 backdrop-blur px-3 py-1 text-[10px] tracking-widest rounded-full"
+              class="absolute top-6 right-6 bg-[#2a2622]/45 backdrop-blur px-3 py-1 text-[10px] tracking-widest rounded-full"
             >
               RESIDENTIAL
             </div>
@@ -745,7 +804,7 @@
 
         <!-- Project 3 -->
         <div
-          class="masonry-item portfolio-card rounded-3xl overflow-hidden border border-[#3a3a3a] group"
+          class="masonry-item portfolio-card rounded-3xl overflow-hidden border border-[#e8e0d4] group"
         >
           <div class="relative">
             <img
@@ -756,17 +815,17 @@
             <div class="portfolio-overlay absolute inset-0 flex items-end p-7">
               <div>
                 <div
-                  class="text-[#f8f4ef] font-medium text-[21px] tracking-[-0.3px]"
+                  class="text-[#faf7f2] font-medium text-[21px] tracking-[-0.3px]"
                 >
                   The Banana Island Residence
                 </div>
-                <div class="text-[#c5a46e] text-sm tracking-wider">
+                <div class="text-[#b8956c] text-sm tracking-wider">
                   LAGOS, NIGERIA
                 </div>
               </div>
             </div>
             <div
-              class="absolute top-6 right-6 bg-black/40 backdrop-blur px-3 py-1 text-[10px] tracking-widest rounded-full"
+              class="absolute top-6 right-6 bg-[#2a2622]/45 backdrop-blur px-3 py-1 text-[10px] tracking-widest rounded-full"
             >
               RESIDENTIAL
             </div>
@@ -775,7 +834,7 @@
 
         <!-- Project 4 -->
         <div
-          class="masonry-item portfolio-card rounded-3xl overflow-hidden border border-[#3a3a3a] group"
+          class="masonry-item portfolio-card rounded-3xl overflow-hidden border border-[#e8e0d4] group"
         >
           <div class="relative">
             <img
@@ -786,17 +845,17 @@
             <div class="portfolio-overlay absolute inset-0 flex items-end p-7">
               <div>
                 <div
-                  class="text-[#f8f4ef] font-medium text-[21px] tracking-[-0.3px]"
+                  class="text-[#faf7f2] font-medium text-[21px] tracking-[-0.3px]"
                 >
                   The Asokoro Penthouse
                 </div>
-                <div class="text-[#c5a46e] text-sm tracking-wider">
+                <div class="text-[#b8956c] text-sm tracking-wider">
                   ABUJA, NIGERIA
                 </div>
               </div>
             </div>
             <div
-              class="absolute top-6 right-6 bg-black/40 backdrop-blur px-3 py-1 text-[10px] tracking-widest rounded-full"
+              class="absolute top-6 right-6 bg-[#2a2622]/45 backdrop-blur px-3 py-1 text-[10px] tracking-widest rounded-full"
             >
               RESIDENTIAL
             </div>
@@ -805,7 +864,7 @@
 
         <!-- Project 5 -->
         <div
-          class="masonry-item portfolio-card rounded-3xl overflow-hidden border border-[#3a3a3a] group"
+          class="masonry-item portfolio-card rounded-3xl overflow-hidden border border-[#e8e0d4] group"
         >
           <div class="relative">
             <img
@@ -816,17 +875,17 @@
             <div class="portfolio-overlay absolute inset-0 flex items-end p-7">
               <div>
                 <div
-                  class="text-[#f8f4ef] font-medium text-[21px] tracking-[-0.3px]"
+                  class="text-[#faf7f2] font-medium text-[21px] tracking-[-0.3px]"
                 >
                   The Lekki Peninsula Home
                 </div>
-                <div class="text-[#c5a46e] text-sm tracking-wider">
+                <div class="text-[#b8956c] text-sm tracking-wider">
                   LAGOS, NIGERIA
                 </div>
               </div>
             </div>
             <div
-              class="absolute top-6 right-6 bg-black/40 backdrop-blur px-3 py-1 text-[10px] tracking-widest rounded-full"
+              class="absolute top-6 right-6 bg-[#2a2622]/45 backdrop-blur px-3 py-1 text-[10px] tracking-widest rounded-full"
             >
               RESIDENTIAL
             </div>
@@ -835,7 +894,7 @@
 
         <!-- Project 6 -->
         <div
-          class="masonry-item portfolio-card rounded-3xl overflow-hidden border border-[#3a3a3a] group"
+          class="masonry-item portfolio-card rounded-3xl overflow-hidden border border-[#e8e0d4] group"
         >
           <div class="relative">
             <img
@@ -846,17 +905,17 @@
             <div class="portfolio-overlay absolute inset-0 flex items-end p-7">
               <div>
                 <div
-                  class="text-[#f8f4ef] font-medium text-[21px] tracking-[-0.3px]"
+                  class="text-[#faf7f2] font-medium text-[21px] tracking-[-0.3px]"
                 >
                   The Galadimawa Villa
                 </div>
-                <div class="text-[#c5a46e] text-sm tracking-wider">
+                <div class="text-[#b8956c] text-sm tracking-wider">
                   ABUJA, NIGERIA
                 </div>
               </div>
             </div>
             <div
-              class="absolute top-6 right-6 bg-black/40 backdrop-blur px-3 py-1 text-[10px] tracking-widest rounded-full"
+              class="absolute top-6 right-6 bg-[#2a2622]/45 backdrop-blur px-3 py-1 text-[10px] tracking-widest rounded-full"
             >
               RESIDENTIAL
             </div>
@@ -867,21 +926,222 @@
       <div class="mt-6 text-center md:hidden">
         <a
           href="#contact"
-          class="inline-flex items-center text-[#c5a46e] text-sm tracking-widest hover:text-white"
+          class="inline-flex items-center text-[#b8956c] text-sm tracking-widest hover:text-[#2a2622]"
           >VIEW THE COMPLETE PORTFOLIO
           <i class="ml-3 fa-solid fa-arrow-right"></i
         ></a>
       </div>
     </section>
 
+    <!-- VIDEOS -->
+    <section
+      id="videos"
+      class="section-padding bg-[#f3efe8] border-y border-[#e8e0d4]"
+    >
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <div class="uppercase text-xs tracking-[4px] text-[#b8956c] mb-3">
+            On Camera
+          </div>
+          <h2 class="heading-serif text-5xl font-medium tracking-tighter">
+            Studio Films
+          </h2>
+          <p class="text-[#5c564e] mt-3 max-w-lg mx-auto">
+            A closer look at our process, spaces, and the transformations we
+            create for homes and workplaces.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <div class="video-frame">
+              <video
+                controls
+                playsinline
+                preload="metadata"
+                poster="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&amp;q=70"
+              >
+                <source src="assets/video-1.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <h3 class="mt-5 text-xl font-medium tracking-tight heading-serif">
+              Tiffany Exquisite Interiors
+            </h3>
+            <p class="text-sm text-[#7a736a] mt-1 leading-relaxed">
+              An introduction to our studio — atmosphere, materials, and the calm
+              luxury that defines every project.
+            </p>
+          </div>
+
+          <div>
+            <div class="video-frame">
+              <video
+                controls
+                playsinline
+                preload="metadata"
+                poster="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&amp;q=70"
+              >
+                <source src="assets/video-before-after.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <h3 class="mt-5 text-xl font-medium tracking-tight heading-serif">
+              Before &amp; After
+            </h3>
+            <p class="text-sm text-[#7a736a] mt-1 leading-relaxed">
+              See the transformation — how we reimagine rooms into refined,
+              livable interiors for everyday elegance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOP / DESIGN ARTIFACTS -->
+    <section id="shop" class="section-padding max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div class="uppercase text-xs tracking-[4px] text-[#b8956c] mb-3">
+          The Collection
+        </div>
+        <h2
+          class="heading-serif text-5xl md:text-6xl font-medium tracking-tighter"
+        >
+          Design Artifacts &amp; Décor
+        </h2>
+        <p class="text-[#5c564e] mt-4 max-w-2xl mx-auto leading-relaxed">
+          Beyond full-space design, we curate and sell interior pieces for homes
+          and offices — artworks, design objects, artificial plants, and
+          finishing touches that bring a room to life.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="shop-card">
+          <div class="aspect-[4/5] overflow-hidden bg-[#f3efe8]">
+            <img
+              src="https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=800&amp;q=80"
+              alt="Curated wall artworks and gallery pieces"
+              class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+          </div>
+          <div class="p-6">
+            <div
+              class="text-[10px] tracking-[2px] text-[#b8956c] uppercase mb-2"
+            >
+              Artworks
+            </div>
+            <h3 class="text-lg font-medium tracking-tight">
+              Gallery &amp; Wall Art
+            </h3>
+            <p class="text-sm text-[#7a736a] mt-2 leading-relaxed">
+              Original and curated pieces to anchor living rooms, lobbies, and
+              private offices.
+            </p>
+          </div>
+        </div>
+
+        <div class="shop-card">
+          <div class="aspect-[4/5] overflow-hidden bg-[#f3efe8]">
+            <img
+              src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&amp;q=80"
+              alt="Design furniture and decorative objects"
+              class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+          </div>
+          <div class="p-6">
+            <div
+              class="text-[10px] tracking-[2px] text-[#b8956c] uppercase mb-2"
+            >
+              Objects
+            </div>
+            <h3 class="text-lg font-medium tracking-tight">Design Pieces</h3>
+            <p class="text-sm text-[#7a736a] mt-2 leading-relaxed">
+              Sculptural décor, statement seating accents, and finishing objects
+              selected for quiet luxury.
+            </p>
+          </div>
+        </div>
+
+        <div class="shop-card">
+          <div class="aspect-[4/5] overflow-hidden bg-[#f3efe8]">
+            <img
+              src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=800&amp;q=80"
+              alt="Artificial plants and greenery for interiors"
+              class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+          </div>
+          <div class="p-6">
+            <div
+              class="text-[10px] tracking-[2px] text-[#b8956c] uppercase mb-2"
+            >
+              Greenery
+            </div>
+            <h3 class="text-lg font-medium tracking-tight">
+              Artificial Plants
+            </h3>
+            <p class="text-sm text-[#7a736a] mt-2 leading-relaxed">
+              Lifelike botanical styling for homes and offices — low maintenance,
+              high impact.
+            </p>
+          </div>
+        </div>
+
+        <div class="shop-card">
+          <div class="aspect-[4/5] overflow-hidden bg-[#f3efe8]">
+            <img
+              src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&amp;q=80"
+              alt="General home and office interior accessories"
+              class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+          </div>
+          <div class="p-6">
+            <div
+              class="text-[10px] tracking-[2px] text-[#b8956c] uppercase mb-2"
+            >
+              Lifestyle
+            </div>
+            <h3 class="text-lg font-medium tracking-tight">
+              Home &amp; Office Décor
+            </h3>
+            <p class="text-sm text-[#7a736a] mt-2 leading-relaxed">
+              Textiles, lighting accents, vases, and everyday design essentials
+              for refined spaces.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-sm text-[#7a736a] mb-5 max-w-md mx-auto">
+          Enquiries and custom sourcing available. Tell us what your space needs
+          — we will curate the right pieces.
+        </p>
+        <a
+          href="#contact"
+          class="premium-btn premium-btn-gold inline-flex items-center gap-x-2 px-10 py-4 rounded-full text-sm font-medium tracking-[1.5px]"
+        >
+          ENQUIRE ABOUT PIECES
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <div class="mt-4 text-sm text-[#5c564e]">
+          <a
+            href="mailto:tiffanynig.ltd@gmail.com"
+            class="hover:text-[#b8956c] transition-colors"
+            >tiffanynig.ltd@gmail.com</a
+          >
+        </div>
+      </div>
+    </section>
+
     <!-- TESTIMONIALS -->
     <section
       id="testimonials"
-      class="section-padding border-t border-[#3a3a3a]"
+      class="section-padding border-t border-[#e8e0d4]"
     >
       <div class="max-w-6xl mx-auto px-6 lg:px-8">
         <div class="text-center mb-12">
-          <div class="uppercase text-xs tracking-[4px] text-[#c5a46e] mb-3">
+          <div class="uppercase text-xs tracking-[4px] text-[#b8956c] mb-3">
             Client Voices
           </div>
           <h2
@@ -894,22 +1154,22 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           <!-- Testimonial 1 -->
           <div
-            class="testimonial-card bg-[#181716] p-8 rounded-3xl border border-[#3a3a3a]"
+            class="testimonial-card bg-[#f3efe8] p-8 rounded-3xl border border-[#e8e0d4]"
           >
             <div class="flex items-center mb-6">
               <img
                 src="https://picsum.photos/id/1005/56/56"
-                class="w-14 h-14 rounded-full object-cover ring-1 ring-[#3a3a3a]"
+                class="w-14 h-14 rounded-full object-cover ring-1 ring-[#e8e0d4]"
                 alt="Adaobi Okoro"
               />
               <div class="ml-4">
                 <div class="font-medium">Adaobi Okoro</div>
-                <div class="text-xs text-[#a69f92]">
+                <div class="text-xs text-[#7a736a]">
                   Founder, Midas touch Holdings • Lagos
                 </div>
               </div>
             </div>
-            <div class="text-[#d4c3aa] leading-relaxed text-[15px]">
+            <div class="text-[#5c564e] leading-relaxed text-[15px]">
               “Tiffany Exquisite Interiors transformed our Guzape home into a
               true sanctuary. The attention to local materials and our family’s
               way of living is unmatched. Every corner feels both elegant and
@@ -922,20 +1182,20 @@
 
           <!-- Testimonial 2 -->
           <div
-            class="testimonial-card bg-[#181716] p-8 rounded-3xl border border-[#3a3a3a]"
+            class="testimonial-card bg-[#f3efe8] p-8 rounded-3xl border border-[#e8e0d4]"
           >
             <div class="flex items-center mb-6">
               <img
                 src="https://picsum.photos/id/1011/56/56"
-                class="w-14 h-14 rounded-full object-cover ring-1 ring-[#3a3a3a]"
+                class="w-14 h-14 rounded-full object-cover ring-1 ring-[#e8e0d4]"
                 alt="Chinedu &amp; Ifeoma Eze"
               />
               <div class="ml-4">
                 <div class="font-medium">Chinedu &amp; Ifeoma Eze</div>
-                <div class="text-xs text-[#a69f92]">Abuja, Nigeria</div>
+                <div class="text-xs text-[#7a736a]">Abuja, Nigeria</div>
               </div>
             </div>
-            <div class="text-[#d4c3aa] leading-relaxed text-[15px]">
+            <div class="text-[#5c564e] leading-relaxed text-[15px]">
               “They understood exactly how we wanted our Maitama residence to
               feel — calm, sophisticated, and welcoming for both family and
               guests. The result is beyond what we imagined.”
@@ -947,22 +1207,22 @@
 
           <!-- Testimonial 3 -->
           <div
-            class="testimonial-card bg-[#181716] p-8 rounded-3xl border border-[#3a3a3a]"
+            class="testimonial-card bg-[#f3efe8] p-8 rounded-3xl border border-[#e8e0d4]"
           >
             <div class="flex items-center mb-6">
               <img
                 src="https://picsum.photos/id/1009/56/56"
-                class="w-14 h-14 rounded-full object-cover ring-1 ring-[#3a3a3a]"
+                class="w-14 h-14 rounded-full object-cover ring-1 ring-[#e8e0d4]"
                 alt="Dr. Amina Yusuf"
               />
               <div class="ml-4">
                 <div class="font-medium">Dr. Amina Yusuf</div>
-                <div class="text-xs text-[#a69f92]">
+                <div class="text-xs text-[#7a736a]">
                   Physician &amp; Collector • Abuja
                 </div>
               </div>
             </div>
-            <div class="text-[#d4c3aa] leading-relaxed text-[15px]">
+            <div class="text-[#5c564e] leading-relaxed text-[15px]">
               “The team turned our Asokoro penthouse into a modern Nigerian
               sanctuary while honouring the heritage of the building. The
               kitchen and baths are exquisite. I recommend them without
@@ -975,22 +1235,22 @@
 
           <!-- Testimonial 4 -->
           <div
-            class="testimonial-card bg-[#181716] p-8 rounded-3xl border border-[#3a3a3a]"
+            class="testimonial-card bg-[#f3efe8] p-8 rounded-3xl border border-[#e8e0d4]"
           >
             <div class="flex items-center mb-6">
               <img
                 src="https://picsum.photos/id/201/56/56"
-                class="w-14 h-14 rounded-full object-cover ring-1 ring-[#3a3a3a]"
+                class="w-14 h-14 rounded-full object-cover ring-1 ring-[#e8e0d4]"
                 alt="Olumide Adewale"
               />
               <div class="ml-4">
                 <div class="font-medium">Olumide Adewale</div>
-                <div class="text-xs text-[#a69f92]">
+                <div class="text-xs text-[#7a736a]">
                   Creative Director • Lagos
                 </div>
               </div>
             </div>
-            <div class="text-[#d4c3aa] leading-relaxed text-[15px]">
+            <div class="text-[#5c564e] leading-relaxed text-[15px]">
               “Tiffany has a remarkable eye. The way they layered textures,
               light, and Nigerian craftsmanship in our Banana Island home is
               pure magic. It is the most personal and beautiful space I have
@@ -1007,14 +1267,14 @@
     <!-- CONTACT SECTION -->
     <section
       id="contact"
-      class="section-padding bg-[#181716] border-t border-[#3a3a3a]"
+      class="section-padding bg-[#f3efe8] border-t border-[#e8e0d4]"
     >
       <div class="max-w-6xl mx-auto px-6 lg:px-8">
         <div class="grid lg:grid-cols-12 gap-x-12 gap-y-14">
           <!-- Contact Form -->
           <div class="lg:col-span-7">
             <div class="mb-9">
-              <div class="uppercase tracking-[3.5px] text-xs text-[#c5a46e]">
+              <div class="uppercase tracking-[3.5px] text-xs text-[#b8956c]">
                 Begin the Conversation
               </div>
               <h2
@@ -1028,27 +1288,27 @@
               <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                   <label
-                    class="block text-xs tracking-widest mb-1.5 text-[#a69f92]"
+                    class="block text-xs tracking-widest mb-1.5 text-[#7a736a]"
                     >FULL NAME</label
                   >
                   <input
                     type="text"
                     id="name"
                     required
-                    class="form-input w-full rounded-2xl px-5 py-3.5 text-sm placeholder-[#6e6659]"
+                    class="form-input w-full rounded-2xl px-5 py-3.5 text-sm placeholder-[#a39b90]"
                     placeholder="Sophia Rex"
                   />
                 </div>
                 <div>
                   <label
-                    class="block text-xs tracking-widest mb-1.5 text-[#a69f92]"
+                    class="block text-xs tracking-widest mb-1.5 text-[#7a736a]"
                     >EMAIL ADDRESS</label
                   >
                   <input
                     type="email"
                     id="email"
                     required
-                    class="form-input w-full rounded-2xl px-5 py-3.5 text-sm placeholder-[#6e6659]"
+                    class="form-input w-full rounded-2xl px-5 py-3.5 text-sm placeholder-[#a39b90]"
                     placeholder="you@domain.com"
                   />
                 </div>
@@ -1057,30 +1317,31 @@
               <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                   <label
-                    class="block text-xs tracking-widest mb-1.5 text-[#a69f92]"
+                    class="block text-xs tracking-widest mb-1.5 text-[#7a736a]"
                     >PHONE</label
                   >
                   <input
                     type="tel"
                     id="phone"
-                    class="form-input w-full rounded-2xl px-5 py-3.5 text-sm placeholder-[#6e6659]"
+                    class="form-input w-full rounded-2xl px-5 py-3.5 text-sm placeholder-[#a39b90]"
                     placeholder="+234 803 555 0192"
                   />
                 </div>
                 <div>
                   <label
-                    class="block text-xs tracking-widest mb-1.5 text-[#a69f92]"
+                    class="block text-xs tracking-widest mb-1.5 text-[#7a736a]"
                     >PROJECT TYPE</label
                   >
                   <select
                     id="project-type"
-                    class="form-input w-full rounded-2xl px-5 py-[15px] text-sm text-[#f8f4ef]"
+                    class="form-input w-full rounded-2xl px-5 py-[15px] text-sm text-[#2a2622]"
                   >
                     <option value="">Select a service</option>
                     <option>Full Residential Design</option>
                     <option>Kitchen &amp; Bath Renovation</option>
                     <option>Commercial / Hospitality</option>
                     <option>Furniture &amp; Styling Only</option>
+                    <option>Decor &amp; Design Artifacts</option>
                     <option>Consultation</option>
                     <option>Other</option>
                   </select>
@@ -1089,14 +1350,14 @@
 
               <div>
                 <label
-                  class="block text-xs tracking-widest mb-1.5 text-[#a69f92]"
+                  class="block text-xs tracking-widest mb-1.5 text-[#7a736a]"
                   >PROJECT NOTES</label
                 >
                 <textarea
                   id="message"
                   rows="4"
                   required
-                  class="form-input w-full rounded-3xl px-5 py-4 text-sm resize-y min-h-[118px] placeholder-[#6e6659]"
+                  class="form-input w-full rounded-3xl px-5 py-4 text-sm resize-y min-h-[118px] placeholder-[#a39b90]"
                   placeholder="Tell us about your project, timeline, and vision..."
                 ></textarea>
               </div>
@@ -1109,7 +1370,7 @@
                   SEND INQUIRY
                   <i class="fa-solid fa-paper-plane"></i>
                 </button>
-                <p class="text-xs text-[#a69f92] mt-4">
+                <p class="text-xs text-[#7a736a] mt-4">
                   We typically respond within 48 hours.
                 </p>
               </div>
@@ -1118,9 +1379,9 @@
 
           <!-- Contact Info + Map -->
           <div class="lg:col-span-5">
-            <div class="bg-[#121212] border border-[#3a3a3a] rounded-3xl p-8">
+            <div class="bg-white border border-[#e8e0d4] rounded-3xl p-8">
               <div>
-                <div class="uppercase tracking-[2.5px] text-xs text-[#c5a46e]">
+                <div class="uppercase tracking-[2.5px] text-xs text-[#b8956c]">
                   Studio
                 </div>
                 <div
@@ -1128,14 +1389,14 @@
                 >
                   Tiffany Exquisite Interiors
                 </div>
-                <div class="text-[#d4c3aa] mt-0.5">Abuja, Nigeria</div>
+                <div class="text-[#5c564e] mt-0.5">Abuja, Nigeria</div>
               </div>
 
               <div class="my-8 elegant-divider"></div>
 
               <div class="space-y-5 text-sm">
                 <div class="flex items-start gap-x-3.5">
-                  <div class="text-[#c5a46e] mt-0.5 w-5">
+                  <div class="text-[#b8956c] mt-0.5 w-5">
                     <i class="fa-solid fa-location-dot"></i>
                   </div>
                   <div>
@@ -1145,23 +1406,23 @@
                   </div>
                 </div>
                 <div class="flex items-center gap-x-3.5">
-                  <div class="text-[#c5a46e] w-5">
+                  <div class="text-[#b8956c] w-5">
                     <i class="fa-solid fa-phone"></i>
                   </div>
                   <a
                     href="tel:+2348035550192"
-                    class="hover:text-[#c5a46e] transition-colors"
+                    class="hover:text-[#b8956c] transition-colors"
                     >+234 809 259 7968</a
                   >
                 </div>
                 <div class="flex items-center gap-x-3.5">
-                  <div class="text-[#c5a46e] w-5">
+                  <div class="text-[#b8956c] w-5">
                     <i class="fa-solid fa-envelope"></i>
                   </div>
                   <a
-                    href="mailto:eusouonso@gmail.com"
-                    class="hover:text-[#c5a46e] transition-colors"
-                    >eusouonso@gmail.com</a
+                    href="mailto:tiffanynig.ltd@gmail.com"
+                    class="hover:text-[#b8956c] transition-colors"
+                    >tiffanynig.ltd@gmail.com</a
                   >
                 </div>
               </div>
@@ -1169,24 +1430,24 @@
               <div class="mt-8 flex gap-x-5">
                 <a
                   href="#"
-                  class="text-[#d4c3aa] hover:text-[#c5a46e] transition-colors text-lg"
+                  class="text-[#5c564e] hover:text-[#b8956c] transition-colors text-lg"
                   ><i class="fa-brands fa-instagram"></i
                 ></a>
                 <a
                   href="#"
-                  class="text-[#d4c3aa] hover:text-[#c5a46e] transition-colors text-lg"
+                  class="text-[#5c564e] hover:text-[#b8956c] transition-colors text-lg"
                   ><i class="fa-brands fa-pinterest-p"></i
                 ></a>
                 <a
                   href="#"
-                  class="text-[#d4c3aa] hover:text-[#c5a46e] transition-colors text-lg"
+                  class="text-[#5c564e] hover:text-[#b8956c] transition-colors text-lg"
                   ><i class="fa-brands fa-linkedin-in"></i
                 ></a>
               </div>
 
               <!-- Map Placeholder -->
               <div
-                class="mt-8 rounded-2xl overflow-hidden border border-[#3a3a3a] h-52 relative group"
+                class="mt-8 rounded-2xl overflow-hidden border border-[#e8e0d4] h-52 relative group"
               >
                 <img
                   src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=900&amp;q=80"
@@ -1195,23 +1456,23 @@
                 />
 
                 <div
-                  class="absolute inset-0 bg-gradient-to-b from-transparent via-[#0f0e0c]/30 to-[#0f0e0c]/70"
+                  class="absolute inset-0 bg-gradient-to-b from-transparent via-[#2a2622]/25 to-[#2a2622]/65"
                 ></div>
 
                 <div class="absolute bottom-0 left-0 right-0 p-5 text-xs">
-                  <div class="flex items-center gap-x-2 text-[#c5a46e]">
+                  <div class="flex items-center gap-x-2 text-[#b8956c]">
                     <i class="fa-solid fa-map-marker-alt"></i>
                     <span class="font-medium tracking-wide"
                       >VISIT THE STUDIO BY APPOINTMENT</span
                     >
                   </div>
-                  <div class="text-[#d4c3aa] text-[10px] mt-px pl-[21px]">
+                  <div class="text-[#5c564e] text-[10px] mt-px pl-[21px]">
                     Galadimawa, Abuja
                   </div>
                 </div>
 
                 <div
-                  class="absolute top-4 right-4 bg-[#0f0e0c]/70 backdrop-blur text-[9px] px-3 py-1 tracking-widest rounded"
+                  class="absolute top-4 right-4 bg-[#faf7f2]/70 backdrop-blur text-[9px] px-3 py-1 tracking-widest rounded"
                 >
                   STUDIO
                 </div>
@@ -1223,7 +1484,7 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="border-t border-[#3a3a3a] py-9 text-center md:text-left">
+    <footer class="border-t border-[#e8e0d4] py-9 text-center md:text-left">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div
           class="flex flex-col md:flex-row md:items-center justify-between gap-y-3 text-xs text-[#8a987f] tracking-wider"
@@ -1232,10 +1493,10 @@
           <div
             class="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-1"
           >
-            <a href="#" class="hover:text-[#d4c3aa]">Privacy</a>
-            <a href="#" class="hover:text-[#d4c3aa]">Legal</a>
-            <a href="#" class="hover:text-[#d4c3aa]">Studio Visits</a>
-            <a href="#" class="hover:text-[#d4c3aa]">Press</a>
+            <a href="#" class="hover:text-[#5c564e]">Privacy</a>
+            <a href="#" class="hover:text-[#5c564e]">Legal</a>
+            <a href="#" class="hover:text-[#5c564e]">Studio Visits</a>
+            <a href="#" class="hover:text-[#5c564e]">Press</a>
           </div>
           <div class="text-[10px]">
             Crafted with intention in Abuja, Nigeria
@@ -1247,27 +1508,27 @@
     <!-- Success Modal -->
     <div
       id="success-modal"
-      class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/80"
+      class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-[#2a2622]/55"
     >
       <div
-        class="bg-[#181716] border border-[#3a3a3a] rounded-3xl max-w-md w-full mx-4 p-9 text-center"
+        class="bg-white border border-[#e8e0d4] rounded-3xl max-w-md w-full mx-4 p-9 text-center"
       >
         <div
-          class="mx-auto w-14 h-14 rounded-full bg-[#c5a46e]/10 flex items-center justify-center mb-5"
+          class="mx-auto w-14 h-14 rounded-full bg-[#b8956c]/10 flex items-center justify-center mb-5"
         >
-          <i class="fa-solid fa-check text-[#c5a46e] text-3xl"></i>
+          <i class="fa-solid fa-check text-[#b8956c] text-3xl"></i>
         </div>
         <h3 class="text-2xl font-medium tracking-tight heading-serif mb-2">
           Thank you.
         </h3>
-        <p class="text-[#d4c3aa]">
+        <p class="text-[#5c564e]">
           Your inquiry has been received. A member of our team will be in touch
           within the next two business days.
         </p>
 
         <button
           onclick="closeModal()"
-          class="mt-8 px-9 py-3 text-xs tracking-[1.5px] font-medium border border-[#c5a46e] hover:bg-[#c5a46e] hover:text-[#0f0e0c] rounded-full transition-colors"
+          class="mt-8 px-9 py-3 text-xs tracking-[1.5px] font-medium border border-[#b8956c] hover:bg-[#b8956c] hover:text-white rounded-full transition-colors"
         >
           RETURN TO SITE
         </button>
@@ -1277,17 +1538,17 @@
     <script>
       // Tailwind script configuration
       function initializeTailwind() {
-        document.documentElement.style.setProperty("--accent-gold", "#c5a46e");
+        document.documentElement.style.setProperty("--accent-gold", "#b8956c");
 
         tailwind.config = {
           theme: {
             extend: {
               colors: {
-                deep: "#0f0e0c",
-                charcoal: "#121212",
-                gold: "#c5a46e",
+                ink: "#2a2622",
+                sand: "#f3efe8",
+                gold: "#b8956c",
                 beige: "#d4c3aa",
-                cream: "#f8f4ef",
+                cream: "#faf7f2",
                 sage: "#8a987f",
               },
             },
@@ -1351,6 +1612,8 @@
           "about",
           "services",
           "work",
+          "videos",
+          "shop",
           "testimonials",
           "contact",
         ];
@@ -1370,12 +1633,12 @@
           });
 
           navLinks.forEach((link) => {
-            link.classList.remove("nav-active", "text-white");
-            link.classList.add("text-[#d4c3aa]");
+            link.classList.remove("nav-active", "text-[#2a2622]");
+            link.classList.add("text-[#5c564e]");
 
             if (link.getAttribute("href") === `#${current}`) {
-              link.classList.add("nav-active", "text-white");
-              link.classList.remove("text-[#d4c3aa]");
+              link.classList.add("nav-active", "text-[#2a2622]");
+              link.classList.remove("text-[#5c564e]");
             }
           });
         }
