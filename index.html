@@ -944,8 +944,11 @@
           <div>
             <div class="video-frame">
               <video
+                class="studio-video"
                 controls
                 playsinline
+                muted
+                loop
                 preload="metadata"
                 poster="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&amp;q=70"
               >
@@ -965,8 +968,11 @@
           <div>
             <div class="video-frame">
               <video
+                class="studio-video"
                 controls
                 playsinline
+                muted
+                loop
                 preload="metadata"
                 poster="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&amp;q=70"
               >
@@ -1010,7 +1016,7 @@
             <img
               src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
               alt="Curated wall artworks and gallery pieces"
-              class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              class="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
               loading="lazy"
               onerror="this.onerror=null;this.src='https://picsum.photos/seed/tiffany-art/800/1000';"
             />
@@ -1034,9 +1040,10 @@
         <div class="shop-card">
           <div class="aspect-[4/5] overflow-hidden bg-[#f3efe8]">
             <img
-              src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&amp;q=80"
-              alt="Design furniture and decorative objects"
-              class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              src="https://images.unsplash.com/photo-1615529328331-f8917597711f?auto=format&amp;fit=crop&amp;w=800&amp;h=1000&amp;q=80"
+              alt="Curated design piece: sculptural lighting and décor object"
+              class="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+              loading="lazy"
             />
           </div>
           <div class="p-6">
@@ -1731,6 +1738,35 @@
         modal.classList.add("hidden");
       }
 
+      // Autoplay studio videos when Videos section is in view (muted for browser rules)
+      function setupVideoAutoplay() {
+        const videos = document.querySelectorAll("#videos video.studio-video");
+        if (!videos.length) return;
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              const video = entry.target;
+              if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
+                video.muted = true;
+                const playPromise = video.play();
+                if (playPromise && typeof playPromise.catch === "function") {
+                  playPromise.catch(() => {});
+                }
+              } else {
+                video.pause();
+              }
+            });
+          },
+          { threshold: [0, 0.35, 0.5, 0.75] }
+        );
+
+        videos.forEach((video) => {
+          video.muted = true;
+          observer.observe(video);
+        });
+      }
+
       // Add subtle scroll animation to cards (optional enhancement)
       function setupScrollAnimations() {
         const observer = new IntersectionObserver(
@@ -1785,6 +1821,7 @@
         setupMobileMenu();
         setupSmoothScroll();
         setupContactForm();
+        setupVideoAutoplay();
         setupScrollAnimations();
         setupKeyboardControls();
 
