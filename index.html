@@ -287,29 +287,15 @@
       class="fixed top-0 left-0 right-0 z-50 bg-[#faf7f2]/95 backdrop-blur-lg border-b border-[#e8e0d4]"
     >
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="flex items-center justify-between h-20">
+        <div class="flex items-center justify-between min-h-[5.5rem] py-2">
           <!-- Logo -->
-          <div class="flex items-center">
-            <div class="flex items-center gap-x-3">
-              <div
-                class="w-9 h-9 rounded-full border border-[#b8956c] flex items-center justify-center"
-              >
-                <span class="text-[#b8956c] text-xl font-light tracking-[-2px]"
-                  >TE</span
-                >
-              </div>
-              <div>
-                <div
-                  class="font-medium text-xl tracking-[-0.5px] heading-serif"
-                >
-                  Tiffany Exquisite
-                </div>
-                <div class="text-[10px] text-[#8a987f] -mt-1 tracking-[2px]">
-                  INTERIORS
-                </div>
-              </div>
-            </div>
-          </div>
+          <a href="#" class="flex items-center shrink-0">
+            <img
+              src="assets/logo.png"
+              alt="Tiffany Exquisite Interiors"
+              class="h-14 md:h-16 w-auto max-w-[200px] object-contain object-left"
+            />
+          </a>
 
           <!-- Desktop Navigation -->
           <div
@@ -423,8 +409,10 @@
       </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="relative h-screen flex items-center justify-center pt-20">
+    <!-- HERO SECTION (extra top space so fixed nav never covers EST badge) -->
+    <section
+      class="relative min-h-screen flex flex-col items-center justify-center pt-32 md:pt-36 pb-16"
+    >
       <!-- Background Image -->
       <div
         class="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -441,9 +429,9 @@
         ></div>
       </div>
 
-      <div class="relative z-10 max-w-5xl px-6 text-center">
+      <div class="relative z-10 max-w-5xl px-6 text-center w-full">
         <div
-          class="inline-block mb-4 px-4 py-1.5 rounded-full border border-white/40 bg-white/15 backdrop-blur text-xs tracking-[3px] text-white"
+          class="inline-block mb-5 px-4 py-1.5 rounded-full border border-white/40 bg-white/15 backdrop-blur text-xs tracking-[3px] text-white"
         >
           EST. 2023 • ABUJA, NIGERIA
         </div>
@@ -519,7 +507,7 @@
             </p>
             <p class="text-[15.5px] leading-relaxed">
               We believe that the most exquisite interiors are not simply
-              designed — they are discovered through thoughtful collaboration
+              designed  -  they are discovered through thoughtful collaboration
               and a profound respect for the way people truly live.
             </p>
           </div>
@@ -969,7 +957,7 @@
               Tiffany Exquisite Interiors
             </h3>
             <p class="text-sm text-[#7a736a] mt-1 leading-relaxed">
-              An introduction to our studio — atmosphere, materials, and the calm
+              An introduction to our studio  -  atmosphere, materials, and the calm
               luxury that defines every project.
             </p>
           </div>
@@ -990,7 +978,7 @@
               Before &amp; After
             </h3>
             <p class="text-sm text-[#7a736a] mt-1 leading-relaxed">
-              See the transformation — how we reimagine rooms into refined,
+              See the transformation  -  how we reimagine rooms into refined,
               livable interiors for everyday elegance.
             </p>
           </div>
@@ -1011,7 +999,7 @@
         </h2>
         <p class="text-[#5c564e] mt-4 max-w-2xl mx-auto leading-relaxed">
           Beyond full-space design, we curate and sell interior pieces for homes
-          and offices — artworks, design objects, artificial plants, and
+          and offices  -  artworks, design objects, artificial plants, and
           finishing touches that bring a room to life.
         </p>
       </div>
@@ -1020,9 +1008,11 @@
         <div class="shop-card">
           <div class="aspect-[4/5] overflow-hidden bg-[#f3efe8]">
             <img
-              src="https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=800&amp;q=80"
+              src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
               alt="Curated wall artworks and gallery pieces"
               class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='https://picsum.photos/seed/tiffany-art/800/1000';"
             />
           </div>
           <div class="p-6">
@@ -1081,7 +1071,7 @@
               Artificial Plants
             </h3>
             <p class="text-sm text-[#7a736a] mt-2 leading-relaxed">
-              Lifelike botanical styling for homes and offices — low maintenance,
+              Lifelike botanical styling for homes and offices  -  low maintenance,
               high impact.
             </p>
           </div>
@@ -1115,7 +1105,7 @@
       <div class="mt-12 text-center">
         <p class="text-sm text-[#7a736a] mb-5 max-w-md mx-auto">
           Enquiries and custom sourcing available. Tell us what your space needs
-          — we will curate the right pieces.
+           -  we will curate the right pieces.
         </p>
         <a
           href="#contact"
@@ -1176,7 +1166,7 @@
               deeply ours.”
             </div>
             <div class="mt-5 text-[10px] tracking-[1.5px] text-[#8a987f]">
-              — THE GUZAPE MOUNTAINVIEW VILLA
+               -  THE GUZAPE MOUNTAINVIEW VILLA
             </div>
           </div>
 
@@ -1197,11 +1187,11 @@
             </div>
             <div class="text-[#5c564e] leading-relaxed text-[15px]">
               “They understood exactly how we wanted our Maitama residence to
-              feel — calm, sophisticated, and welcoming for both family and
+              feel  -  calm, sophisticated, and welcoming for both family and
               guests. The result is beyond what we imagined.”
             </div>
             <div class="mt-5 text-[10px] tracking-[1.5px] text-[#8a987f]">
-              — THE MAITAMA RESIDENCE
+               -  THE MAITAMA RESIDENCE
             </div>
           </div>
 
@@ -1229,7 +1219,7 @@
               hesitation.”
             </div>
             <div class="mt-5 text-[10px] tracking-[1.5px] text-[#8a987f]">
-              — THE ASOKORO PENTHOUSE
+               -  THE ASOKORO PENTHOUSE
             </div>
           </div>
 
@@ -1257,7 +1247,7 @@
               ever lived in.”
             </div>
             <div class="mt-5 text-[10px] tracking-[1.5px] text-[#8a987f]">
-              — THE BANANA ISLAND RESIDENCE
+               -  THE BANANA ISLAND RESIDENCE
             </div>
           </div>
         </div>
@@ -1594,7 +1584,7 @@
             const target = document.querySelector(this.getAttribute("href"));
             if (target) {
               e.preventDefault();
-              const navHeight = 80;
+              const navHeight = 96;
               const elementPosition = target.getBoundingClientRect().top;
               const offsetPosition =
                 elementPosition + window.scrollY - navHeight;
