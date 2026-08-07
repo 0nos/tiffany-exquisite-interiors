@@ -282,9 +282,303 @@
       .testimonial-card {
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       }
+
+      .skip-link {
+        position: absolute;
+        left: 1rem;
+        top: -100px;
+        z-index: 2000;
+        background: #b8956c;
+        color: #fff;
+        padding: 0.55rem 0.9rem;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+      }
+      .skip-link:focus {
+        top: 1rem;
+      }
+      .market-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+      }
+      @media (max-width: 1000px) {
+        .market-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 560px) {
+        .market-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .market-card {
+        position: relative;
+        display: block;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        border: 1px solid #e8e0d4;
+        min-height: 260px;
+        background: #fff;
+        transition: transform 0.35s ease, border-color 0.35s ease;
+      }
+      .market-card:hover {
+        transform: translateY(-4px);
+        border-color: #b8956c;
+      }
+      .market-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        inset: 0;
+        transition: transform 0.6s ease;
+      }
+      .market-card:hover img {
+        transform: scale(1.05);
+      }
+      .market-card .market-body {
+        position: absolute;
+        inset: auto 0 0 0;
+        padding: 1.2rem 1.15rem 1.3rem;
+        background: linear-gradient(
+          to top,
+          rgba(42, 38, 34, 0.92),
+          rgba(42, 38, 34, 0.15)
+        );
+        color: #faf7f2;
+      }
+      .market-label {
+        display: block;
+        font-size: 0.68rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #d4c3aa;
+        margin-bottom: 0.35rem;
+      }
+      .market-card h3 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 1.25rem;
+        margin-bottom: 0.3rem;
+      }
+      .market-card p {
+        font-size: 0.88rem;
+        color: rgba(250, 247, 242, 0.82);
+      }
+      .method-track {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.85rem;
+        padding: 0;
+        margin: 0;
+      }
+      @media (max-width: 1000px) {
+        .method-track {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 560px) {
+        .method-track {
+          grid-template-columns: 1fr;
+        }
+      }
+      .method-step {
+        border: 1px solid #e8e0d4;
+        background: #fff;
+        border-radius: 1.25rem;
+        padding: 1.25rem 1.1rem 1.35rem;
+      }
+      .method-num {
+        display: block;
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        color: #b8956c;
+        margin-bottom: 0.55rem;
+        font-weight: 600;
+      }
+      .method-step h3 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 1.15rem;
+        margin-bottom: 0.4rem;
+      }
+      .method-step p {
+        color: #7a736a;
+        font-size: 0.9rem;
+        line-height: 1.55;
+      }
+      .sustain-band {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 2rem;
+        align-items: center;
+        border: 1px solid #e8e0d4;
+        border-radius: 1.5rem;
+        padding: 1.75rem;
+        background: #fff;
+      }
+      @media (max-width: 900px) {
+        .sustain-band {
+          grid-template-columns: 1fr;
+        }
+      }
+      .sustain-visual {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+      }
+      .sustain-visual img {
+        border-radius: 1rem;
+        height: 170px;
+        width: 100%;
+        object-fit: cover;
+        border: 1px solid #e8e0d4;
+      }
+      .insight-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.15rem;
+      }
+      @media (max-width: 900px) {
+        .insight-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .insight-card {
+        border: 1px solid #e8e0d4;
+        background: #fff;
+        border-radius: 1.25rem;
+        padding: 1.4rem 1.3rem 1.5rem;
+        transition: border-color 0.3s ease, transform 0.3s ease;
+      }
+      .insight-card:hover {
+        border-color: #b8956c;
+        transform: translateY(-3px);
+      }
+      .insight-tag {
+        display: inline-block;
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #b8956c;
+        margin-bottom: 0.7rem;
+        font-weight: 600;
+      }
+      .insight-card h3 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+      }
+      .insight-card p {
+        color: #7a736a;
+        font-size: 0.92rem;
+        line-height: 1.6;
+      }
+      .filter-bar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+      }
+      .filter-chip {
+        appearance: none;
+        border: 1px solid #e8e0d4;
+        background: #fff;
+        color: #5c564e;
+        border-radius: 999px;
+        padding: 0.45rem 0.95rem;
+        font-size: 0.82rem;
+        letter-spacing: 0.04em;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .filter-chip:hover {
+        border-color: #b8956c;
+        color: #2a2622;
+      }
+      .filter-chip.active {
+        background: #b8956c;
+        border-color: #b8956c;
+        color: #fff;
+      }
+      .filter-count {
+        color: #8a8278;
+        font-size: 0.85rem;
+        margin-bottom: 1.25rem;
+        min-height: 1.2em;
+      }
+      .masonry-item.is-hidden {
+        display: none !important;
+      }
+      .mega-footer {
+        background: #f3efe8;
+        border-top: 1px solid #e8e0d4;
+        padding: 3.5rem 0 1.75rem;
+      }
+      .mega-footer-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr 1fr 1.1fr;
+        gap: 2rem 1.5rem;
+        margin-bottom: 2rem;
+      }
+      @media (max-width: 1024px) {
+        .mega-footer-grid {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+      @media (max-width: 700px) {
+        .mega-footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 480px) {
+        .mega-footer-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .mega-footer h4 {
+        font-size: 0.75rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #2a2622;
+        margin-bottom: 0.9rem;
+        font-weight: 600;
+      }
+      .mega-footer a,
+      .mega-footer p {
+        display: block;
+        color: #7a736a;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.45;
+      }
+      .mega-footer a:hover {
+        color: #b8956c;
+      }
+      .mega-footer .brand-blurb {
+        color: #5c564e;
+        max-width: 28ch;
+        margin-top: 0.65rem;
+      }
+      .mega-footer-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0.75rem;
+        padding-top: 1.35rem;
+        border-top: 1px solid #e8e0d4;
+        font-size: 0.78rem;
+        color: #8a8278;
+        letter-spacing: 0.04em;
+      }
+
     </style>
   </head>
   <body class="light-bg text-[#2a2622] smooth-scroll overflow-x-hidden">
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <!-- NAVBAR -->
     <nav
       class="fixed top-0 left-0 right-0 z-50 bg-[#faf7f2]/95 backdrop-blur-lg border-b border-[#e8e0d4]"
@@ -315,6 +609,11 @@
               >Services</a
             >
             <a
+              href="#method"
+              class="nav-link text-[#5c564e] hover:text-[#2a2622] text-sm"
+              >Process</a
+            >
+            <a
               href="#work"
               class="nav-link text-[#5c564e] hover:text-[#2a2622] text-sm"
               >Work</a
@@ -333,6 +632,11 @@
               href="#testimonials"
               class="nav-link text-[#5c564e] hover:text-[#2a2622] text-sm"
               >Journal</a
+            >
+            <a
+              href="careers.html"
+              class="nav-link text-[#5c564e] hover:text-[#2a2622] text-sm"
+              >Careers</a
             >
             <a
               href="#contact"
@@ -378,6 +682,11 @@
             >Services</a
           >
           <a
+            href="#method"
+            class="mobile-nav-link text-[#5c564e] hover:text-[#2a2622] py-1"
+            >Process</a
+          >
+          <a
             href="#work"
             class="mobile-nav-link text-[#5c564e] hover:text-[#2a2622] py-1"
             >Work</a
@@ -398,6 +707,11 @@
             >Journal</a
           >
           <a
+            href="careers.html"
+            class="mobile-nav-link text-[#5c564e] hover:text-[#2a2622] py-1"
+            >Careers</a
+          >
+          <a
             href="#contact"
             class="mobile-nav-link text-[#5c564e] hover:text-[#2a2622] py-1"
             >Contact</a
@@ -412,6 +726,7 @@
       </div>
     </nav>
 
+    <main id="main-content">
     <!-- HERO SECTION (extra top space so fixed nav never covers EST badge) -->
     <section
       class="relative min-h-screen flex flex-col items-center justify-center pt-32 md:pt-36 pb-16"
@@ -580,6 +895,102 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+
+    <!-- MARKETS (from Aramet/Bechtel idea, interiors-tuned) -->
+    <section id="markets" class="section-padding max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div class="uppercase text-xs tracking-[4px] text-[#b8956c] mb-3">
+          Markets we serve
+        </div>
+        <h2 class="heading-serif text-5xl font-medium tracking-tighter">
+          Spaces we design for
+        </h2>
+        <p class="text-[#5c564e] mt-3 max-w-xl mx-auto">
+          Clear markets, not vague luxury talk. Homes, hospitality, commercial
+          interiors, and curated pieces for rooms that already exist.
+        </p>
+      </div>
+      <div class="market-grid">
+        <a class="market-card" href="#services">
+          <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=900&amp;q=80" alt="Residential interiors" />
+          <div class="market-body">
+            <span class="market-label">01 · Residential</span>
+            <h3>Private homes</h3>
+            <p>Full-home and room-by-room residences across Abuja and Lagos.</p>
+          </div>
+        </a>
+        <a class="market-card" href="#services">
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=900&amp;q=80" alt="Hospitality interiors" />
+          <div class="market-body">
+            <span class="market-label">02 · Hospitality</span>
+            <h3>Guest experiences</h3>
+            <p>Warm, memorable interiors for hospitality and entertainment spaces.</p>
+          </div>
+        </a>
+        <a class="market-card" href="#services">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&amp;q=80" alt="Commercial interiors" />
+          <div class="market-body">
+            <span class="market-label">03 · Commercial</span>
+            <h3>Workspaces</h3>
+            <p>Offices and branded environments that feel calm and considered.</p>
+          </div>
+        </a>
+        <a class="market-card" href="#shop">
+          <img src="assets/design-piece.jpeg" alt="Design artifacts and decor" />
+          <div class="market-body">
+            <span class="market-label">04 · Collection</span>
+            <h3>Artifacts &amp; décor</h3>
+            <p>Art, plants, and design pieces for homes and offices.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- DESIGN PROCESS -->
+    <section id="method" class="section-padding bg-[#f3efe8] border-y border-[#e8e0d4]">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <div class="uppercase text-xs tracking-[4px] text-[#b8956c] mb-3">
+            Our process
+          </div>
+          <h2 class="heading-serif text-5xl font-medium tracking-tighter">
+            How a Tiffany project unfolds
+          </h2>
+          <p class="text-[#5c564e] mt-3 max-w-xl mx-auto">
+            One clear path from first conversation to living in the finished room.
+            Clients always know what happens next.
+          </p>
+        </div>
+        <ol class="method-track">
+          <li class="method-step">
+            <span class="method-num">01</span>
+            <h3>Discover</h3>
+            <p>Lifestyle, budget, site constraints, and the feeling you want every day.</p>
+          </li>
+          <li class="method-step">
+            <span class="method-num">02</span>
+            <h3>Concept</h3>
+            <p>Mood, material direction, and spatial ideas before anything is ordered.</p>
+          </li>
+          <li class="method-step">
+            <span class="method-num">03</span>
+            <h3>Detail</h3>
+            <p>Drawings, finishes, FF&amp;E lists, and a programme you can trust.</p>
+          </li>
+          <li class="method-step">
+            <span class="method-num">04</span>
+            <h3>Install</h3>
+            <p>Site coordination, styling, and quality control through fit-out.</p>
+          </li>
+          <li class="method-step">
+            <span class="method-num">05</span>
+            <h3>Live in it</h3>
+            <p>Final styling, handover, and a space that already feels like home.</p>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -1134,6 +1545,81 @@
       </div>
     </section>
 
+
+    <!-- SUSTAINABILITY -->
+    <section id="sustainability" class="section-padding max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="sustain-band">
+        <div>
+          <div class="uppercase text-xs tracking-[4px] text-[#b8956c] mb-3">
+            Conscious design
+          </div>
+          <h2 class="heading-serif text-4xl md:text-5xl font-medium tracking-tighter mb-4">
+            Beauty that respects the room and the planet
+          </h2>
+          <p class="text-[#5c564e] leading-relaxed mb-5 max-w-xl">
+            Sustainability for us is material honesty and longevity. We choose finishes
+            and pieces that age well, source thoughtfully, and avoid trend waste.
+          </p>
+          <ul class="space-y-2 text-sm text-[#5c564e]">
+            <li class="flex gap-2"><span class="text-[#b8956c]">•</span> Durable materials over disposable fashion</li>
+            <li class="flex gap-2"><span class="text-[#b8956c]">•</span> Local and regional craft where quality allows</li>
+            <li class="flex gap-2"><span class="text-[#b8956c]">•</span> Low-maintenance botanical styling options</li>
+            <li class="flex gap-2"><span class="text-[#b8956c]">•</span> Timeless schemes that do not need a full redo every two years</li>
+          </ul>
+          <a href="#contact" class="inline-flex mt-6 text-sm tracking-widest text-[#b8956c] hover:text-[#2a2622]">
+            DISCUSS A CONSCIOUS PROJECT →
+          </a>
+        </div>
+        <div class="sustain-visual">
+          <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=700&amp;q=80" alt="Natural botanical styling" />
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=700&amp;q=80" alt="Natural material interior" />
+        </div>
+      </div>
+    </section>
+
+    <!-- STUDIO NOTES -->
+    <section id="insights" class="section-padding bg-[#f3efe8] border-y border-[#e8e0d4]">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <div class="uppercase text-xs tracking-[4px] text-[#b8956c] mb-3">
+            Studio notes
+          </div>
+          <h2 class="heading-serif text-5xl font-medium tracking-tighter">
+            What we are noticing in the field
+          </h2>
+          <p class="text-[#5c564e] mt-3 max-w-xl mx-auto">
+            Short, practical notes from real projects - not empty trend talk.
+          </p>
+        </div>
+        <div class="insight-grid">
+          <article class="insight-card">
+            <span class="insight-tag">Residential</span>
+            <h3>Light first, furniture second</h3>
+            <p>
+              In Abuja and Lagos, how a room handles day heat and evening glow decides
+              more of the mood than any single sofa. We plan lighting before the shopping list.
+            </p>
+          </article>
+          <article class="insight-card">
+            <span class="insight-tag">Materials</span>
+            <h3>Quiet luxury is a material choice</h3>
+            <p>
+              Stone, timber, linen, and honest metals age better than loud surface trends.
+              Clients feel the difference three years later.
+            </p>
+          </article>
+          <article class="insight-card">
+            <span class="insight-tag">Collection</span>
+            <h3>Finishing pieces make the space feel owned</h3>
+            <p>
+              Art, plants, and design objects are not afterthoughts. They are how a finished
+              interior stops looking like a showroom and starts feeling like home.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- TESTIMONIALS -->
     <section
       id="testimonials"
@@ -1513,31 +1999,57 @@
       </div>
     </section>
 
+    </main>
+
     <!-- FOOTER -->
-    <footer class="border-t border-[#e8e0d4] py-9 text-center md:text-left">
+    <footer class="mega-footer">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div
-          class="flex flex-col md:flex-row md:items-center justify-between gap-y-3 text-xs text-[#8a987f] tracking-wider"
-        >
-          <div>© 2026 Tiffany Exquisite Interiors. All rights reserved.</div>
-          <div
-            class="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-1"
-          >
-            <a href="privacy.html" class="hover:text-[#5c564e]">Privacy</a>
-            <a href="legal.html" class="hover:text-[#5c564e]">Legal</a>
-            <a href="#contact" class="hover:text-[#5c564e]">Studio Visits</a>
-            <a
-              href="mailto:tiffanynig.ltd@gmail.com?subject=Press%20inquiry%20-%20Tiffany%20Exquisite%20Interiors"
-              class="hover:text-[#5c564e]"
-              >Press</a
-            >
+        <div class="mega-footer-grid">
+          <div>
+            <img src="assets/logo.png" alt="Tiffany Exquisite Interiors" class="h-14 w-auto object-contain mb-3" />
+            <p class="brand-blurb">
+              Timeless interiors and curated design pieces for homes and workplaces in Nigeria.
+            </p>
           </div>
-          <div class="text-[10px]">
-            Crafted with intention in Abuja, Nigeria
+          <div>
+            <h4>Studio</h4>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#work">Selected work</a>
+            <a href="#videos">Films</a>
+            <a href="#contact">Contact</a>
           </div>
+          <div>
+            <h4>Explore</h4>
+            <a href="#markets">Markets we serve</a>
+            <a href="#method">Our process</a>
+            <a href="#shop">Shop artifacts</a>
+            <a href="#sustainability">Conscious design</a>
+            <a href="#insights">Studio notes</a>
+          </div>
+          <div>
+            <h4>People</h4>
+            <a href="careers.html">Careers</a>
+            <a href="#contact">Studio visits</a>
+            <a href="mailto:tiffanynig.ltd@gmail.com?subject=Press%20inquiry%20-%20Tiffany%20Exquisite%20Interiors">Press</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="legal.html">Legal</a>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <a href="mailto:tiffanynig.ltd@gmail.com">tiffanynig.ltd@gmail.com</a>
+            <a href="tel:+2348092597968">+234 809 259 7968</a>
+            <p>Aldenco Estate, Galadimawa</p>
+            <p>Abuja, Nigeria</p>
+          </div>
+        </div>
+        <div class="mega-footer-bottom">
+          <span>© 2026 Tiffany Exquisite Interiors. All rights reserved.</span>
+          <span>Crafted with intention in Abuja, Nigeria</span>
         </div>
       </div>
     </footer>
+
 
     <!-- Success Modal -->
     <div
@@ -1644,10 +2156,14 @@
         // Active navigation highlighting
         const sections = [
           "about",
+          "markets",
+          "method",
           "services",
           "work",
           "videos",
           "shop",
+          "sustainability",
+          "insights",
           "testimonials",
           "contact",
         ];
@@ -1741,6 +2257,40 @@
         modal.classList.add("hidden");
       }
 
+
+      function setupPortfolioFilter() {
+        const bar = document.querySelector(".filter-bar");
+        const grid = document.getElementById("portfolio-filter-grid");
+        const countEl = document.getElementById("filter-count");
+        if (!bar || !grid) return;
+        const cards = Array.from(grid.querySelectorAll(".masonry-item[data-tags]"));
+        const chips = Array.from(bar.querySelectorAll(".filter-chip"));
+        const apply = (key) => {
+          let visible = 0;
+          cards.forEach((card) => {
+            const tags = (card.getAttribute("data-tags") || "").toLowerCase();
+            const show = key === "all" || tags.split(/\s+/).includes(key);
+            card.classList.toggle("is-hidden", !show);
+            if (show) visible += 1;
+          });
+          chips.forEach((c) =>
+            c.classList.toggle("active", c.getAttribute("data-filter") === key)
+          );
+          if (countEl) {
+            countEl.textContent =
+              key === "all"
+                ? `Showing all ${visible} projects`
+                : `Showing ${visible} project${visible === 1 ? "" : "s"}`;
+          }
+        };
+        chips.forEach((chip) => {
+          chip.addEventListener("click", () =>
+            apply(chip.getAttribute("data-filter") || "all")
+          );
+        });
+        apply("all");
+      }
+
       // Autoplay studio videos when Videos section is in view (muted for browser rules)
       function setupVideoAutoplay() {
         const videos = document.querySelectorAll("#videos video.studio-video");
@@ -1825,6 +2375,7 @@
         setupSmoothScroll();
         setupContactForm();
         setupVideoAutoplay();
+        setupPortfolioFilter();
         setupScrollAnimations();
         setupKeyboardControls();
 
