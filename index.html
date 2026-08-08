@@ -575,6 +575,81 @@
         letter-spacing: 0.04em;
       }
 
+
+      .room-scroll {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 0.85rem;
+      }
+      @media (max-width: 1024px) {
+        .room-scroll {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (max-width: 560px) {
+        .room-scroll {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      .room-tile {
+        position: relative;
+        display: block;
+        border-radius: 1.15rem;
+        overflow: hidden;
+        aspect-ratio: 4 / 5;
+        border: 1px solid #e8e0d4;
+        background: #fff;
+      }
+      .room-tile img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.55s ease;
+      }
+      .room-tile:hover img {
+        transform: scale(1.06);
+      }
+      .room-tile span {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0.85rem 0.75rem;
+        font-size: 0.82rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #faf7f2;
+        background: linear-gradient(to top, rgba(42, 38, 34, 0.88), transparent);
+      }
+      .style-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+        justify-content: center;
+      }
+      @media (min-width: 768px) {
+        .style-grid {
+          justify-content: flex-start;
+        }
+      }
+      .style-chip {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.7rem 1.15rem;
+        border-radius: 999px;
+        border: 1px solid #e8e0d4;
+        background: #fff;
+        color: #5c564e;
+        font-size: 0.88rem;
+        letter-spacing: 0.02em;
+        transition: all 0.25s ease;
+      }
+      .style-chip:hover {
+        border-color: #b8956c;
+        color: #2a2622;
+        background: #faf7f2;
+      }
+
     </style>
   </head>
   <body class="light-bg text-[#2a2622] smooth-scroll overflow-x-hidden">
@@ -609,14 +684,14 @@
               >Services</a
             >
             <a
-              href="#method"
-              class="nav-link text-[#5c564e] hover:text-[#2a2622] text-sm"
-              >Process</a
-            >
-            <a
               href="#work"
               class="nav-link text-[#5c564e] hover:text-[#2a2622] text-sm"
               >Work</a
+            >
+            <a
+              href="#ideas"
+              class="nav-link text-[#5c564e] hover:text-[#2a2622] text-sm"
+              >Ideas</a
             >
             <a
               href="#videos"
@@ -632,11 +707,6 @@
               href="#testimonials"
               class="nav-link text-[#5c564e] hover:text-[#2a2622] text-sm"
               >Journal</a
-            >
-            <a
-              href="careers.html"
-              class="nav-link text-[#5c564e] hover:text-[#2a2622] text-sm"
-              >Careers</a
             >
             <a
               href="#contact"
@@ -682,14 +752,14 @@
             >Services</a
           >
           <a
-            href="#method"
-            class="mobile-nav-link text-[#5c564e] hover:text-[#2a2622] py-1"
-            >Process</a
-          >
-          <a
             href="#work"
             class="mobile-nav-link text-[#5c564e] hover:text-[#2a2622] py-1"
             >Work</a
+          >
+          <a
+            href="#ideas"
+            class="mobile-nav-link text-[#5c564e] hover:text-[#2a2622] py-1"
+            >Ideas</a
           >
           <a
             href="#videos"
@@ -705,11 +775,6 @@
             href="#testimonials"
             class="mobile-nav-link text-[#5c564e] hover:text-[#2a2622] py-1"
             >Journal</a
-          >
-          <a
-            href="careers.html"
-            class="mobile-nav-link text-[#5c564e] hover:text-[#2a2622] py-1"
-            >Careers</a
           >
           <a
             href="#contact"
@@ -899,101 +964,6 @@
     </section>
 
 
-    <!-- MARKETS (from Aramet/Bechtel idea, interiors-tuned) -->
-    <section id="markets" class="section-padding max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <div class="uppercase text-xs tracking-[4px] text-[#b8956c] mb-3">
-          Markets we serve
-        </div>
-        <h2 class="heading-serif text-5xl font-medium tracking-tighter">
-          Spaces we design for
-        </h2>
-        <p class="text-[#5c564e] mt-3 max-w-xl mx-auto">
-          Clear markets, not vague luxury talk. Homes, hospitality, commercial
-          interiors, and curated pieces for rooms that already exist.
-        </p>
-      </div>
-      <div class="market-grid">
-        <a class="market-card" href="#services">
-          <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=900&amp;q=80" alt="Residential interiors" />
-          <div class="market-body">
-            <span class="market-label">01 · Residential</span>
-            <h3>Private homes</h3>
-            <p>Full-home and room-by-room residences across Abuja and Lagos.</p>
-          </div>
-        </a>
-        <a class="market-card" href="#services">
-          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=900&amp;q=80" alt="Hospitality interiors" />
-          <div class="market-body">
-            <span class="market-label">02 · Hospitality</span>
-            <h3>Guest experiences</h3>
-            <p>Warm, memorable interiors for hospitality and entertainment spaces.</p>
-          </div>
-        </a>
-        <a class="market-card" href="#services">
-          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&amp;q=80" alt="Commercial interiors" />
-          <div class="market-body">
-            <span class="market-label">03 · Commercial</span>
-            <h3>Workspaces</h3>
-            <p>Offices and branded environments that feel calm and considered.</p>
-          </div>
-        </a>
-        <a class="market-card" href="#shop">
-          <img src="assets/design-piece.jpeg" alt="Design artifacts and decor" />
-          <div class="market-body">
-            <span class="market-label">04 · Collection</span>
-            <h3>Artifacts &amp; décor</h3>
-            <p>Art, plants, and design pieces for homes and offices.</p>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- DESIGN PROCESS -->
-    <section id="method" class="section-padding bg-[#f3efe8] border-y border-[#e8e0d4]">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <div class="uppercase text-xs tracking-[4px] text-[#b8956c] mb-3">
-            Our process
-          </div>
-          <h2 class="heading-serif text-5xl font-medium tracking-tighter">
-            How a Tiffany project unfolds
-          </h2>
-          <p class="text-[#5c564e] mt-3 max-w-xl mx-auto">
-            One clear path from first conversation to living in the finished room.
-            Clients always know what happens next.
-          </p>
-        </div>
-        <ol class="method-track">
-          <li class="method-step">
-            <span class="method-num">01</span>
-            <h3>Discover</h3>
-            <p>Lifestyle, budget, site constraints, and the feeling you want every day.</p>
-          </li>
-          <li class="method-step">
-            <span class="method-num">02</span>
-            <h3>Concept</h3>
-            <p>Mood, material direction, and spatial ideas before anything is ordered.</p>
-          </li>
-          <li class="method-step">
-            <span class="method-num">03</span>
-            <h3>Detail</h3>
-            <p>Drawings, finishes, FF&amp;E lists, and a programme you can trust.</p>
-          </li>
-          <li class="method-step">
-            <span class="method-num">04</span>
-            <h3>Install</h3>
-            <p>Site coordination, styling, and quality control through fit-out.</p>
-          </li>
-          <li class="method-step">
-            <span class="method-num">05</span>
-            <h3>Live in it</h3>
-            <p>Final styling, handover, and a space that already feels like home.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
     <!-- SERVICES -->
     <section
       id="services"
@@ -1115,6 +1085,69 @@
             </p>
           </div>
         </div>
+      </div>
+    </section>
+
+
+    <!-- IDEAS (Houzz-inspired: rooms + styles) -->
+    <section id="ideas" class="section-padding max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div class="uppercase text-xs tracking-[4px] text-[#b8956c] mb-3">
+          Get inspired
+        </div>
+        <h2 class="heading-serif text-5xl md:text-6xl font-medium tracking-tighter">
+          Ideas by room &amp; style
+        </h2>
+        <p class="text-[#5c564e] mt-4 max-w-2xl mx-auto leading-relaxed">
+          Browse the language of a Tiffany home the way you explore a design magazine:
+          by the rooms you live in, and the mood you want to wake up to.
+        </p>
+      </div>
+
+      <div class="mb-10">
+        <h3 class="heading-serif text-2xl mb-5 text-center md:text-left">By room</h3>
+        <div class="room-scroll">
+          <a class="room-tile" href="#contact">
+            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&amp;q=80" alt="Kitchen ideas" />
+            <span>Kitchen</span>
+          </a>
+          <a class="room-tile" href="#contact">
+            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600&amp;q=80" alt="Bedroom ideas" />
+            <span>Bedroom</span>
+          </a>
+          <a class="room-tile" href="#contact">
+            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&amp;q=80" alt="Living room ideas" />
+            <span>Living</span>
+          </a>
+          <a class="room-tile" href="#contact">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&amp;q=80" alt="Bath ideas" />
+            <span>Bath</span>
+          </a>
+          <a class="room-tile" href="#contact">
+            <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=600&amp;q=80" alt="Dining ideas" />
+            <span>Dining</span>
+          </a>
+          <a class="room-tile" href="#contact">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&amp;q=80" alt="Home office ideas" />
+            <span>Office</span>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="heading-serif text-2xl mb-5 text-center md:text-left">By style</h3>
+        <div class="style-grid">
+          <a class="style-chip" href="#work">Quiet luxury</a>
+          <a class="style-chip" href="#work">Contemporary</a>
+          <a class="style-chip" href="#work">Modern tropical</a>
+          <a class="style-chip" href="#work">Transitional</a>
+          <a class="style-chip" href="#work">Warm minimal</a>
+          <a class="style-chip" href="#work">Classic Nigerian modern</a>
+        </div>
+        <p class="text-center text-sm text-[#7a736a] mt-6">
+          Tell us the rooms and style you love  -  we will shape a scheme that feels like you.
+          <a href="#contact" class="text-[#b8956c] hover:underline ml-1">Start a consultation</a>
+        </p>
       </div>
     </section>
 
@@ -1546,38 +1579,7 @@
     </section>
 
 
-    <!-- SUSTAINABILITY -->
-    <section id="sustainability" class="section-padding max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="sustain-band">
-        <div>
-          <div class="uppercase text-xs tracking-[4px] text-[#b8956c] mb-3">
-            Conscious design
-          </div>
-          <h2 class="heading-serif text-4xl md:text-5xl font-medium tracking-tighter mb-4">
-            Beauty that respects the room and the planet
-          </h2>
-          <p class="text-[#5c564e] leading-relaxed mb-5 max-w-xl">
-            Sustainability for us is material honesty and longevity. We choose finishes
-            and pieces that age well, source thoughtfully, and avoid trend waste.
-          </p>
-          <ul class="space-y-2 text-sm text-[#5c564e]">
-            <li class="flex gap-2"><span class="text-[#b8956c]">•</span> Durable materials over disposable fashion</li>
-            <li class="flex gap-2"><span class="text-[#b8956c]">•</span> Local and regional craft where quality allows</li>
-            <li class="flex gap-2"><span class="text-[#b8956c]">•</span> Low-maintenance botanical styling options</li>
-            <li class="flex gap-2"><span class="text-[#b8956c]">•</span> Timeless schemes that do not need a full redo every two years</li>
-          </ul>
-          <a href="#contact" class="inline-flex mt-6 text-sm tracking-widest text-[#b8956c] hover:text-[#2a2622]">
-            DISCUSS A CONSCIOUS PROJECT →
-          </a>
-        </div>
-        <div class="sustain-visual">
-          <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=700&amp;q=80" alt="Natural botanical styling" />
-          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=700&amp;q=80" alt="Natural material interior" />
-        </div>
-      </div>
-    </section>
-
-    <!-- STUDIO NOTES -->
+<!-- STUDIO NOTES -->
     <section id="insights" class="section-padding bg-[#f3efe8] border-y border-[#e8e0d4]">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="text-center mb-12">
@@ -2002,53 +2004,51 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="mega-footer">
+    <footer class="border-t border-[#e8e0d4] bg-[#faf7f2] pt-14 pb-8">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="mega-footer-grid">
-          <div>
-            <img src="assets/logo.png" alt="Tiffany Exquisite Interiors" class="h-14 w-auto object-contain mb-3" />
-            <p class="brand-blurb">
-              Timeless interiors and curated design pieces for homes and workplaces in Nigeria.
+        <div class="grid md:grid-cols-12 gap-10 mb-12">
+          <div class="md:col-span-5">
+            <img src="assets/logo.png" alt="Tiffany Exquisite Interiors" class="h-14 w-auto object-contain mb-4" />
+            <p class="text-[#5c564e] text-sm leading-relaxed max-w-sm">
+              Timeless interiors and curated design pieces for homes and workplaces.
+              Studio in Galadimawa, Abuja.
             </p>
           </div>
-          <div>
-            <h4>Studio</h4>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#work">Selected work</a>
-            <a href="#videos">Films</a>
-            <a href="#contact">Contact</a>
+          <div class="md:col-span-2">
+            <div class="text-[10px] tracking-[0.16em] uppercase text-[#b8956c] mb-4 font-semibold">Explore</div>
+            <div class="space-y-2 text-sm text-[#5c564e]">
+              <a href="#about" class="block hover:text-[#b8956c]">About</a>
+              <a href="#services" class="block hover:text-[#b8956c]">Services</a>
+              <a href="#work" class="block hover:text-[#b8956c]">Work</a>
+              <a href="#ideas" class="block hover:text-[#b8956c]">Ideas</a>
+              <a href="#shop" class="block hover:text-[#b8956c]">Shop</a>
+            </div>
           </div>
-          <div>
-            <h4>Explore</h4>
-            <a href="#markets">Markets we serve</a>
-            <a href="#method">Our process</a>
-            <a href="#shop">Shop artifacts</a>
-            <a href="#sustainability">Conscious design</a>
-            <a href="#insights">Studio notes</a>
+          <div class="md:col-span-2">
+            <div class="text-[10px] tracking-[0.16em] uppercase text-[#b8956c] mb-4 font-semibold">Studio</div>
+            <div class="space-y-2 text-sm text-[#5c564e]">
+              <a href="#videos" class="block hover:text-[#b8956c]">Films</a>
+              <a href="#contact" class="block hover:text-[#b8956c]">Book a visit</a>
+              <a href="privacy.html" class="block hover:text-[#b8956c]">Privacy</a>
+              <a href="legal.html" class="block hover:text-[#b8956c]">Legal</a>
+            </div>
           </div>
-          <div>
-            <h4>People</h4>
-            <a href="careers.html">Careers</a>
-            <a href="#contact">Studio visits</a>
-            <a href="mailto:tiffanynig.ltd@gmail.com?subject=Press%20inquiry%20-%20Tiffany%20Exquisite%20Interiors">Press</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="legal.html">Legal</a>
-          </div>
-          <div>
-            <h4>Contact</h4>
-            <a href="mailto:tiffanynig.ltd@gmail.com">tiffanynig.ltd@gmail.com</a>
-            <a href="tel:+2348092597968">+234 809 259 7968</a>
-            <p>Aldenco Estate, Galadimawa</p>
-            <p>Abuja, Nigeria</p>
+          <div class="md:col-span-3">
+            <div class="text-[10px] tracking-[0.16em] uppercase text-[#b8956c] mb-4 font-semibold">Contact</div>
+            <div class="space-y-2 text-sm text-[#5c564e]">
+              <a href="mailto:tiffanynig.ltd@gmail.com" class="block hover:text-[#b8956c]">tiffanynig.ltd@gmail.com</a>
+              <a href="tel:+2348092597968" class="block hover:text-[#b8956c]">+234 809 259 7968</a>
+              <p>Aldenco Estate, Galadimawa<br />Abuja, Nigeria</p>
+            </div>
           </div>
         </div>
-        <div class="mega-footer-bottom">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pt-6 border-t border-[#e8e0d4] text-xs text-[#8a987f] tracking-wider">
           <span>© 2026 Tiffany Exquisite Interiors. All rights reserved.</span>
-          <span>Crafted with intention in Abuja, Nigeria</span>
+          <span>Crafted with intention in Abuja</span>
         </div>
       </div>
     </footer>
+
 
 
     <!-- Success Modal -->
@@ -2156,14 +2156,11 @@
         // Active navigation highlighting
         const sections = [
           "about",
-          "markets",
-          "method",
           "services",
           "work",
+          "ideas",
           "videos",
           "shop",
-          "sustainability",
-          "insights",
           "testimonials",
           "contact",
         ];
