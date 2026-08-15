@@ -576,6 +576,78 @@
       }
 
 
+      /* Discover Ideas — Houzz-style photo browsing */
+      .discover-hero {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+      }
+      @media (max-width: 900px) {
+        .discover-hero {
+          grid-template-columns: 1fr;
+        }
+      }
+      .discover-feature {
+        position: relative;
+        display: block;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        min-height: 340px;
+        border: 1px solid #e8e0d4;
+      }
+      .discover-feature img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        inset: 0;
+        transition: transform 0.7s ease;
+      }
+      .discover-feature:hover img {
+        transform: scale(1.04);
+      }
+      .discover-feature .df-copy {
+        position: absolute;
+        inset: auto 0 0 0;
+        padding: 1.75rem 1.5rem 1.6rem;
+        background: linear-gradient(
+          to top,
+          rgba(42, 38, 34, 0.9) 0%,
+          rgba(42, 38, 34, 0.35) 55%,
+          transparent 100%
+        );
+        color: #faf7f2;
+      }
+      .discover-feature .df-kicker {
+        font-size: 0.68rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #d4c3aa;
+        margin-bottom: 0.4rem;
+      }
+      .discover-feature h3 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 1.65rem;
+        line-height: 1.2;
+        margin-bottom: 0.35rem;
+      }
+      .discover-feature p {
+        font-size: 0.92rem;
+        color: rgba(250, 247, 242, 0.85);
+        max-width: 36ch;
+      }
+      .discover-side {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        gap: 1rem;
+      }
+      .discover-side .discover-feature {
+        min-height: 160px;
+      }
+      .discover-side .discover-feature h3 {
+        font-size: 1.2rem;
+      }
       .room-scroll {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
@@ -615,44 +687,225 @@
         right: 0;
         bottom: 0;
         padding: 0.85rem 0.75rem;
-        font-size: 0.82rem;
-        letter-spacing: 0.08em;
+        font-size: 0.78rem;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
         color: #faf7f2;
-        background: linear-gradient(to top, rgba(42, 38, 34, 0.88), transparent);
+        background: linear-gradient(to top, rgba(42, 38, 34, 0.9), transparent);
       }
-      .style-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.65rem;
-        justify-content: center;
+      .style-photo-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
       }
-      @media (min-width: 768px) {
-        .style-grid {
-          justify-content: flex-start;
+      @media (max-width: 900px) {
+        .style-photo-grid {
+          grid-template-columns: 1fr 1fr;
         }
       }
-      .style-chip {
-        display: inline-flex;
-        align-items: center;
-        padding: 0.7rem 1.15rem;
-        border-radius: 999px;
-        border: 1px solid #e8e0d4;
-        background: #fff;
-        color: #5c564e;
-        font-size: 0.88rem;
-        letter-spacing: 0.02em;
-        transition: all 0.25s ease;
+      @media (max-width: 520px) {
+        .style-photo-grid {
+          grid-template-columns: 1fr;
+        }
       }
-      .style-chip:hover {
-        border-color: #b8956c;
+      .style-photo {
+        position: relative;
+        display: block;
+        border-radius: 1.25rem;
+        overflow: hidden;
+        aspect-ratio: 16 / 11;
+        border: 1px solid #e8e0d4;
+      }
+      .style-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.55s ease;
+      }
+      .style-photo:hover img {
+        transform: scale(1.05);
+      }
+      .style-photo span {
+        position: absolute;
+        left: 0.9rem;
+        bottom: 0.85rem;
+        padding: 0.4rem 0.85rem;
+        border-radius: 999px;
+        background: rgba(250, 247, 242, 0.94);
         color: #2a2622;
+        font-size: 0.78rem;
+        letter-spacing: 0.04em;
+        border: 1px solid #e8e0d4;
+      }
+      .idea-story-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.15rem;
+        margin-top: 2.5rem;
+      }
+      @media (max-width: 900px) {
+        .idea-story-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .idea-story {
+        background: #fff;
+        border: 1px solid #e8e0d4;
+        border-radius: 1.35rem;
+        overflow: hidden;
+        transition: border-color 0.3s ease, transform 0.3s ease;
+      }
+      .idea-story:hover {
+        border-color: #b8956c;
+        transform: translateY(-3px);
+      }
+      .idea-story img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+      .idea-story .is-body {
+        padding: 1.15rem 1.2rem 1.3rem;
+      }
+      .idea-story .is-tag {
+        font-size: 0.65rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #b8956c;
+        font-weight: 600;
+      }
+      .idea-story h3 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 1.2rem;
+        margin: 0.45rem 0 0.4rem;
+        line-height: 1.3;
+      }
+      .idea-story p {
+        color: #7a736a;
+        font-size: 0.9rem;
+        line-height: 1.55;
+      }
+
+      /* Intro splash — brief branded gate on every load & refresh */
+      .site-intro {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background: #faf7f2;
+        transform: translateY(0);
+        transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+      }
+      .site-intro.is-done {
+        transform: translateY(-100%);
+        pointer-events: none;
+      }
+      .site-intro-inner {
+        text-align: center;
+        padding: 2rem;
+        animation: introRise 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+      .site-intro-inner img {
+        width: 112px;
+        height: auto;
+        margin: 0 auto 1.1rem;
+        display: block;
+        object-fit: contain;
+      }
+      .site-intro-inner .intro-name {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(1.45rem, 4vw, 2.1rem);
+        letter-spacing: -0.02em;
+        color: #2a2622;
+        margin-bottom: 0.45rem;
+      }
+      .site-intro-inner .intro-tag {
+        font-size: 0.7rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #b8956c;
+      }
+      .site-intro-line {
+        width: 48px;
+        height: 1px;
+        background: #b8956c;
+        margin: 0.95rem auto 0;
+        transform-origin: center;
+        animation: introLine 0.35s 0.08s ease both;
+      }
+      @keyframes introRise {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes introLine {
+        from {
+          transform: scaleX(0);
+          opacity: 0;
+        }
+        to {
+          transform: scaleX(1);
+          opacity: 1;
+        }
+      }
+      body.intro-lock {
+        overflow: hidden;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .site-intro,
+        .site-intro-inner,
+        .site-intro-line {
+          animation: none !important;
+          transition: none !important;
+        }
       }
 
     </style>
   </head>
-  <body class="light-bg text-[#2a2622] smooth-scroll overflow-x-hidden">
+  <body class="light-bg text-[#2a2622] smooth-scroll overflow-x-hidden intro-lock">
+    <!-- Intro splash — brief branded gate on every load/refresh -->
+    <div id="site-intro" class="site-intro" role="presentation" aria-hidden="true">
+      <div class="site-intro-inner">
+        <img src="assets/logo.png" alt="" width="112" height="112" />
+        <div class="intro-name">Tiffany Exquisite Interiors</div>
+        <div class="intro-tag">Timeless spaces · Thoughtful living</div>
+        <div class="site-intro-line" aria-hidden="true"></div>
+      </div>
+    </div>
+    <noscript>
+      <style>
+        .site-intro { display: none !important; }
+        body.intro-lock { overflow: auto !important; }
+      </style>
+    </noscript>
+    <script>
+      (function () {
+        var intro = document.getElementById("site-intro");
+        if (!intro) {
+          document.body.classList.remove("intro-lock");
+          return;
+        }
+        var reduced =
+          window.matchMedia &&
+          window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var hold = reduced ? 0 : 380;
+        window.setTimeout(function () {
+          intro.classList.add("is-done");
+          document.body.classList.remove("intro-lock");
+          window.setTimeout(function () {
+            if (intro.parentNode) intro.parentNode.removeChild(intro);
+          }, reduced ? 0 : 520);
+        }, hold);
+      })();
+    </script>
+
     <a class="skip-link" href="#main-content">Skip to content</a>
     <!-- NAVBAR -->
     <nav
@@ -691,7 +944,7 @@
             <a
               href="#ideas"
               class="nav-link text-[#5c564e] hover:text-[#2a2622] text-sm"
-              >Ideas</a
+              >Discover</a
             >
             <a
               href="#videos"
@@ -759,7 +1012,7 @@
           <a
             href="#ideas"
             class="mobile-nav-link text-[#5c564e] hover:text-[#2a2622] py-1"
-            >Ideas</a
+            >Discover</a
           >
           <a
             href="#videos"
@@ -1089,65 +1342,195 @@
     </section>
 
 
-    <!-- IDEAS (Houzz-inspired: rooms + styles) -->
-    <section id="ideas" class="section-padding max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <div class="uppercase text-xs tracking-[4px] text-[#b8956c] mb-3">
-          Get inspired
+    <!-- DISCOVER IDEAS (Houzz-inspired) -->
+    <section id="ideas" class="section-padding bg-[#f3efe8] border-y border-[#e8e0d4]">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+          <div class="max-w-2xl">
+            <div class="uppercase text-xs tracking-[4px] text-[#b8956c] mb-3">
+              Discover ideas
+            </div>
+            <h2 class="heading-serif text-5xl md:text-6xl font-medium tracking-tighter">
+              Find inspiration for every room
+            </h2>
+            <p class="text-[#5c564e] mt-4 leading-relaxed">
+              Browse photo stories, rooms, and styles  -  then tell us which feeling you want
+              at home. We turn inspiration into a finished Tiffany interior.
+            </p>
+          </div>
+          <a
+            href="#contact"
+            class="premium-btn premium-btn-outline px-7 py-3 rounded-full text-xs font-medium tracking-[1.5px] shrink-0 text-center"
+          >
+            BRING AN IDEA TO LIFE
+          </a>
         </div>
-        <h2 class="heading-serif text-5xl md:text-6xl font-medium tracking-tighter">
-          Ideas by room &amp; style
-        </h2>
-        <p class="text-[#5c564e] mt-4 max-w-2xl mx-auto leading-relaxed">
-          Browse the language of a Tiffany home the way you explore a design magazine:
-          by the rooms you live in, and the mood you want to wake up to.
-        </p>
-      </div>
 
-      <div class="mb-10">
-        <h3 class="heading-serif text-2xl mb-5 text-center md:text-left">By room</h3>
-        <div class="room-scroll">
-          <a class="room-tile" href="#contact">
-            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&amp;q=80" alt="Kitchen ideas" />
-            <span>Kitchen</span>
+        <!-- Featured idea stories (like Houzz ideabooks) -->
+        <div class="discover-hero">
+          <a class="discover-feature" href="#contact">
+            <img
+              src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1400&amp;q=80"
+              alt="Warm living room with layered neutrals"
+            />
+            <div class="df-copy">
+              <div class="df-kicker">Living · Quiet luxury</div>
+              <h3>Living rooms that feel collected, not staged</h3>
+              <p>
+                Soft layers, honest materials, and light that works from afternoon heat to evening calm.
+              </p>
+            </div>
           </a>
-          <a class="room-tile" href="#contact">
-            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600&amp;q=80" alt="Bedroom ideas" />
-            <span>Bedroom</span>
-          </a>
-          <a class="room-tile" href="#contact">
-            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&amp;q=80" alt="Living room ideas" />
-            <span>Living</span>
-          </a>
-          <a class="room-tile" href="#contact">
-            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&amp;q=80" alt="Bath ideas" />
-            <span>Bath</span>
-          </a>
-          <a class="room-tile" href="#contact">
-            <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=600&amp;q=80" alt="Dining ideas" />
-            <span>Dining</span>
-          </a>
-          <a class="room-tile" href="#contact">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&amp;q=80" alt="Home office ideas" />
-            <span>Office</span>
-          </a>
+          <div class="discover-side">
+            <a class="discover-feature" href="#contact">
+              <img
+                src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&amp;q=80"
+                alt="Elegant kitchen interior"
+              />
+              <div class="df-copy">
+                <div class="df-kicker">Kitchen</div>
+                <h3>Kitchens made for gathering</h3>
+                <p>Warm timber, clean lines, and storage that disappears.</p>
+              </div>
+            </a>
+            <a class="discover-feature" href="#contact">
+              <img
+                src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=900&amp;q=80"
+                alt="Serene bathroom with vanity and spa finishes"
+              />
+              <div class="df-copy">
+                <div class="df-kicker">Bath</div>
+                <h3>Bathrooms as private retreats</h3>
+                <p>Stone, soft light, and spa-calm detailing.</p>
+              </div>
+            </a>
+          </div>
         </div>
-      </div>
 
-      <div>
-        <h3 class="heading-serif text-2xl mb-5 text-center md:text-left">By style</h3>
-        <div class="style-grid">
-          <a class="style-chip" href="#work">Quiet luxury</a>
-          <a class="style-chip" href="#work">Contemporary</a>
-          <a class="style-chip" href="#work">Modern tropical</a>
-          <a class="style-chip" href="#work">Transitional</a>
-          <a class="style-chip" href="#work">Warm minimal</a>
-          <a class="style-chip" href="#work">Classic Nigerian modern</a>
+        <!-- Browse by room -->
+        <div class="mb-12">
+          <div class="flex items-baseline justify-between mb-5">
+            <h3 class="heading-serif text-2xl md:text-3xl">Browse by room</h3>
+            <a href="#contact" class="text-xs tracking-widest text-[#b8956c] hover:text-[#2a2622] hidden sm:inline"
+              >ASK ABOUT A ROOM →</a
+            >
+          </div>
+          <div class="room-scroll">
+            <a class="room-tile" href="#contact">
+              <img
+                src="https://images.unsplash.com/photo-1556912173-46c336c7fd55?auto=format&amp;fit=crop&amp;w=700&amp;h=900&amp;q=80"
+                alt="Modern kitchen interior with island and cabinetry"
+              />
+              <span>Kitchen</span>
+            </a>
+            <a class="room-tile" href="#contact">
+              <img
+                src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&amp;fit=crop&amp;w=700&amp;h=900&amp;q=80"
+                alt="Soft layered bedroom with bed and textiles"
+              />
+              <span>Bedroom</span>
+            </a>
+            <a class="room-tile" href="#contact">
+              <img
+                src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&amp;fit=crop&amp;w=700&amp;h=900&amp;q=80"
+                alt="Living room with sofa, seating and coffee table"
+              />
+              <span>Living</span>
+            </a>
+            <a class="room-tile" href="#contact">
+              <img
+                src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&amp;fit=crop&amp;w=700&amp;h=900&amp;q=80"
+                alt="Bathroom with vanity, mirror and spa finishes"
+              />
+              <span>Bath</span>
+            </a>
+            <a class="room-tile" href="#contact">
+              <img
+                src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&amp;fit=crop&amp;w=700&amp;h=900&amp;q=80"
+                alt="Dining room with table and chairs"
+              />
+              <span>Dining</span>
+            </a>
+            <a class="room-tile" href="#contact">
+              <img
+                src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&amp;fit=crop&amp;w=700&amp;h=900&amp;q=80"
+                alt="Home office with desk and work seating"
+              />
+              <span>Office</span>
+            </a>
+          </div>
         </div>
-        <p class="text-center text-sm text-[#7a736a] mt-6">
-          Tell us the rooms and style you love  -  we will shape a scheme that feels like you.
-          <a href="#contact" class="text-[#b8956c] hover:underline ml-1">Start a consultation</a>
-        </p>
+
+        <!-- Browse by style (photo cards, not plain chips) -->
+        <div>
+          <h3 class="heading-serif text-2xl md:text-3xl mb-5">Browse by style</h3>
+          <div class="style-photo-grid">
+            <a class="style-photo" href="#work">
+              <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&amp;q=80" alt="Quiet luxury style" />
+              <span>Quiet luxury</span>
+            </a>
+            <a class="style-photo" href="#work">
+              <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&amp;q=80" alt="Contemporary style" />
+              <span>Contemporary</span>
+            </a>
+            <a class="style-photo" href="#work">
+              <img src="https://images.unsplash.com/photo-1615873968403-89e068629265?w=800&amp;q=80" alt="Modern tropical style" />
+              <span>Modern tropical</span>
+            </a>
+            <a class="style-photo" href="#work">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&amp;q=80" alt="Warm minimal style" />
+              <span>Warm minimal</span>
+            </a>
+            <a class="style-photo" href="#work">
+              <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&amp;q=80" alt="Transitional style" />
+              <span>Transitional</span>
+            </a>
+            <a class="style-photo" href="#work">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&amp;q=80" alt="Nigerian modern style" />
+              <span>Nigerian modern</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Short idea stories -->
+        <div class="idea-story-grid">
+          <article class="idea-story">
+            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=700&amp;q=80" alt="Layered bedroom textiles" />
+            <div class="is-body">
+              <div class="is-tag">Bedroom</div>
+              <h3>How soft layers make a bedroom feel finished</h3>
+              <p>Textiles, bedside light, and tone  -  the quiet moves that turn a room into a retreat.</p>
+            </div>
+          </article>
+          <article class="idea-story">
+            <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=700&amp;q=80" alt="Botanical styling in a living room" />
+            <div class="is-body">
+              <div class="is-tag">Styling</div>
+              <h3>Greenery that softens modern interiors</h3>
+              <p>Lifelike plants and sculptural vessels for homes that need calm without high maintenance.</p>
+            </div>
+          </article>
+          <article class="idea-story">
+            <img src="assets/design-piece.jpeg" alt="Tiffany design piece" />
+            <div class="is-body">
+              <div class="is-tag">Collection</div>
+              <h3>Pieces that complete the room</h3>
+              <p>Art and design objects from our collection  -  the final layer that makes a space feel owned.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="text-center mt-12">
+          <p class="text-sm text-[#7a736a] mb-5 max-w-lg mx-auto">
+            Loved a room or style above? Share it with us and we will build a scheme around it.
+          </p>
+          <a
+            href="#contact"
+            class="premium-btn premium-btn-gold inline-flex px-10 py-4 rounded-full text-sm font-medium tracking-[1.5px]"
+          >
+            START WITH YOUR FAVOURITE IDEA
+          </a>
+        </div>
       </div>
     </section>
 
@@ -1977,7 +2360,7 @@
               <a href="#about" class="block hover:text-[#b8956c]">About</a>
               <a href="#services" class="block hover:text-[#b8956c]">Services</a>
               <a href="#work" class="block hover:text-[#b8956c]">Work</a>
-              <a href="#ideas" class="block hover:text-[#b8956c]">Ideas</a>
+              <a href="#ideas" class="block hover:text-[#b8956c]">Discover ideas</a>
               <a href="#shop" class="block hover:text-[#b8956c]">Shop</a>
             </div>
           </div>
