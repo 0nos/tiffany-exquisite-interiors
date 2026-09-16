@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tiffany Exquisite Interiors — timeless interiors and thoughtful living. Abuja studio for residential and commercial spaces."
+    />
+    <meta name="theme-color" content="#faf7f2" />
     <title>Tiffany Exquisite Interiors • Timeless Elegance</title>
     <link rel="icon" href="assets/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" href="assets/favicon-32.png" sizes="32x32" />
@@ -19,17 +24,17 @@
         --ink: #2a2622;
         --ink-soft: #5c564e;
         --muted: #8a8278;
-        --gold: #b8956c;
-        --gold-soft: #d4c3aa;
+        --gold: #c09a6e;
+        --gold-soft: #d6c4aa;
         --cream: #faf7f2;
-        --sand: #f3efe8;
+        --sand: #f4efe8;
         --white: #ffffff;
         --border: #e8e0d4;
         --sage: #8a987f;
       }
 
       body {
-        font-family: "Inter", system_ui, sans-serif;
+        font-family: "Inter", system-ui, sans-serif;
       }
 
       .heading-serif {
@@ -981,6 +986,10 @@
           <!-- Mobile Menu Button -->
           <button
             id="mobile-menu-btn"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
             class="md:hidden w-10 h-10 flex items-center justify-center text-[#5c564e] hover:text-[#2a2622]"
           >
             <i class="fa-solid fa-bars text-xl"></i>
@@ -1135,16 +1144,15 @@
 
           <div class="prose prose-lg text-[#5c564e] max-w-[52ch]">
             <p class="text-[15.5px] leading-relaxed mb-6">
-              For more than fifteen years, Tiffany Exquisite Interiors has
-              created homes of enduring beauty for clients who value refinement,
-              serenity, and authenticity. Our practice is rooted in deep
-              listening and an uncompromising attention to proportion, material,
-              and light.
+              From our Abuja studio, Tiffany Exquisite Interiors creates homes
+              of enduring beauty for clients who value refinement, serenity, and
+              authenticity. The practice is rooted in close listening and
+              uncompromising attention to proportion, material, and light.
             </p>
             <p class="text-[15.5px] leading-relaxed">
-              We believe that the most exquisite interiors are not simply
-              designed  -  they are discovered through thoughtful collaboration
-              and a profound respect for the way people truly live.
+              The most exquisite interiors are not simply designed — they are
+              discovered through thoughtful collaboration and a genuine respect
+              for the way people actually live.
             </p>
           </div>
         </div>
@@ -1231,7 +1239,7 @@
             Curated Services
           </h2>
           <p class="text-[#5c564e] mt-3 max-w-md mx-auto">
-            Thoughtfully designed experiences from concept through completion.
+            Thoughtfully designed work, from first concept through completion.
           </p>
         </div>
 
@@ -2447,28 +2455,31 @@
         const menuBtn = document.getElementById("mobile-menu-btn");
         const mobileMenu = document.getElementById("mobile-menu");
 
-        menuBtn.addEventListener("click", () => {
-          mobileMenu.classList.toggle("hidden");
-
+        const setMenuState = (open) => {
+          mobileMenu.classList.toggle("hidden", !open);
+          menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+          menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
           const icon = menuBtn.querySelector("i");
-          if (mobileMenu.classList.contains("hidden")) {
-            icon.classList.remove("fa-times");
-            icon.classList.add("fa-bars");
-          } else {
-            icon.classList.remove("fa-bars");
-            icon.classList.add("fa-times");
+          if (icon) {
+            icon.classList.toggle("fa-times", open);
+            icon.classList.toggle("fa-bars", !open);
+          }
+        };
+
+        menuBtn.addEventListener("click", () => {
+          setMenuState(mobileMenu.classList.contains("hidden"));
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && !mobileMenu.classList.contains("hidden")) {
+            setMenuState(false);
           }
         });
 
         // Close mobile menu when clicking a link
         const mobileLinks = document.querySelectorAll(".mobile-nav-link");
         mobileLinks.forEach((link) => {
-          link.addEventListener("click", () => {
-            mobileMenu.classList.add("hidden");
-            const icon = menuBtn.querySelector("i");
-            icon.classList.remove("fa-times");
-            icon.classList.add("fa-bars");
-          });
+          link.addEventListener("click", () => setMenuState(false));
         });
       }
 
@@ -2716,11 +2727,7 @@
         setupScrollAnimations();
         setupKeyboardControls();
 
-        // Optional: Preload hover state for hero button
-        console.log(
-          "%c[Tiffany Exquisite Interiors] Premium single-page website initialized successfully.",
-          "color:#8a987f; font-size:9px"
-        );
+
       }
 
       // Boot the site
